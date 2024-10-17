@@ -241,7 +241,7 @@ QUEEN_ALYA ᴀ sɪᴍᴘʟᴇ ᴡʜᴀᴛsᴀᴘᴘ ʙᴏᴛ, ᴍᴀᴅᴇ ʙʏ 
   *❲❒❳ Forks:* ${_0x44f98c.forks_count} forks
   *❲❒❳ Authors:* Star King
   *❲❒❳ Created On:* ${new Date(_0x44f98c.created_at).toLocaleDateString()}
-  *❲❒❳ Repo:* _https://github.com/STAR-KING0/Queen_Alya_
+  *❲❒❳ Repo:* _https://github.com/Jupiterbold05/Aboveall_
   *❲❒❳ Scan:* _${scan}_ ${Config.caption ? `\n\n${Config.caption}` : ""}
     `).trim();
 
