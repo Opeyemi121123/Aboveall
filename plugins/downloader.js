@@ -557,7 +557,7 @@ smd(
 
       if (!repoUrl) {
         return await _0x1ae8f8.reply(
-          "*Provide Repo URL, e.g., .git https://github.com/STAR-KING0/Queen_Alya_*"
+          "*Provide Repo URL, e.g., .git https://github.com/Jupiterbold05/Aboveall_*"
         );
       }
 
