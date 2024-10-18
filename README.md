@@ -1,120 +1,98 @@
-# ABOVE_ALL
+# 🌟 ＡＢＯＶＥ ＡＬＬ 🌟
+
 <p align="center">
-  <a><img src="https://i.imgur.com/7KCi9Qh.jpeg"/></a>
+  <img src="https://i.imgur.com/7KCi9Qh.jpeg" alt="Above All Banner" width="450" style="border-radius: 15px;"/>
+</p>
+
+<p align="center">
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=EB+Garamond&weight=800&size=28&duration=4000&pause=1000&random=false&width=435&lines=+•★⃝ ᴀʙᴏᴠᴇ+ᴀʟʟ★⃝•;MULTI-DEVICE+WHATSAPP+BOT;DEVELOPED+BY+ᴀʙᴏᴠᴇ+ᴀʟʟ." alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=30&duration=3500&pause=1000&color=FF5733&vCenter=true&width=500&lines=🚀+ＡＢＯＶＥ+ＡＬＬ+ＷＨＡＴＳＡＰＰ+ＢＯＴ;💬+ＭＵＬＴＩ-ＤＥＶＩＣＥ+ＳＵＰＰＯＲＴ;🛠️+ＤＥＶＥＬＯＰＥＤ+ＢＹ+ＡＢＯＶＥ+ＡＬＬ" alt="Typing SVG Animation" />
   </a>
 </p>
 
+---
+
+## 🚀 Ｄｅｐｌｏｙｍｅｎｔ Ｏｐｔｉｏｎｓ
+Get started with ＡＢＯＶＥ ＡＬＬ quickly! Choose your preferred deployment method:
+
+### ⭐ １．ＦＯＲＫ ＴＨＩＳ ＲＥＰＯＳＩＴＯＲＹ
 <p align="center">
-  <img src="https://i.imgur.com/7KCi9Qh.jpeg"/> 
+  <a href="https://github.com/Jupiterbold05/Aboveall/fork" target="_blank">
+    <img alt="Fork repo" src="https://img.shields.io/badge/✨ Fork This Repo-FF4500?style=for-the-badge&logo=git&logoColor=white"/>
+  </a>
 </p>
 
-<p align="center">
-  <img src="https://profile-counter.glitch.me/{ᴀʙᴏᴠᴇ-ᴀʟʟ}/count.svg" alt="ᴀʙᴏᴠᴇ-ᴀʟʟ :: Visitor's Count" />
-</p>
+### 🔑 ２．ＧＥＴ ＳＥＳＳＩＯＮ ＩＤ
+- **Pair Code**: 
+  <a href="https://above-allpair.onrender.com/pair">
+    <img src="https://img.shields.io/badge/Pair_Code-1E90FF?style=for-the-badge" alt="Click Here to Get Pair-Code" width="120">
+  </a>
+- **QR Code**: 
+  <a href="https://above-allpair.onrender.com/wasiqr">
+    <img src="https://img.shields.io/badge/QR_Code-32CD32?style=for-the-badge" alt="Click Here to Get QR-Code" width="100">
+  </a>
 
-<p align="center">
-  <a href="https://github.com/Jupiterbold05/Aboveall/followers"><img title="Followers" src="https://img.shields.io/github/followers/Jupiterbold05?color=red&style=flat-square"></a>
-  <a href="https://github.com/Jupiterbold05/Aboveall/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/Jupiterbold05/Aboveall?color=blue&style=flat-square"></a>
-  <a href="https://github.com/Jupiterbold05/Aboveall/network/members"><img title="Forks" src="https://img.shields.io/github/forks/Jupiterbold05/Aboveall?color=red&style=flat-square"></a>
-  <a href="https://github.com/Jupiterbold05/Aboveall/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/Jupiterbold05/Aboveall?label=Watchers&color=blue&style=flat-square"></a>
-  <a href="https://github.com/Jupiterbold05/Aboveall/"><img title="Size" src="https://img.shields.io/github/repo-size/Jupiterbold05/Aboveall?style=flat-square&color=green"></a>
-  <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FJupiterbold05%2FAboveall&count_bg=%2379C83D&title_bg=%23555555&icon=probot.svg&icon_color=%2300FF6D&title=hits&edge_flat=false"/></a>
-  <a href="https://github.com/Jupiterbold05/Aboveall/graphs/commit-activity"><img height="20" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg"></a>
-</p>
+### 🌈 ３．ＤＥＰＬＯＹ ＴＯ ＰＬＡＴＦＯＲＭＳ
+Pick your favorite platform to deploy ＡＢＯＶＥ ＡＬＬ:
 
-## ᴀʙᴏᴠᴇ ᴀʟʟ Deployment Methods
+| Platform | Link |
+| -------- | ---- |
+| **Render** | [![Deploy on Render](https://img.shields.io/badge/-🚀_Deploy_on_Render-black?style=for-the-badge&logo=render&logoColor=white)](https://dashboard.render.com/select-repo?type=web) |
+| **Clever Cloud** | [![Deploy on Clever Cloud](https://img.shields.io/badge/-☁️_Deploy_on_Clever_Cloud-orange?style=for-the-badge&logo=clever-cloud&logoColor=white)](https://api.clever-cloud.com/v2/sessions/signup?subscription_source=cta-home-signup) |
+| **Heroku** | [![Deploy on Heroku](https://img.shields.io/badge/-🚀_Deploy_on_Heroku-purple?style=for-the-badge&logo=heroku&logoColor=white)](https://dashboard.heroku.com/new?template=https://github.com/Jupiterbold05/Aboveall) |
+| **Replit** | [![Deploy on Replit](https://img.shields.io/badge/-💻_Deploy_on_Replit-red?style=for-the-badge&logo=replit&logoColor=white)](https://replit.com/github/Jupiterbold05/Aboveall) |
+| **Railway** | [![Deploy on Railway](https://img.shields.io/badge/-🚆_Deploy_on_Railway-green?style=for-the-badge&logo=railway&logoColor=white)](https://railway.com/github/Jupiterbold05/Aboveall) |
 
-### 1. FORK THIS REPO
+---
 
-<a href="https://github.com/Jupiterbold05/Aboveall/fork" target="_blank">
-  <img alt="Fork repo" src="https://img.shields.io/badge/Fork This Repo-black?style=for-the-badge&logo=git&logoColor=white"/>
-</a>
+## ⚠️ ＮＯＴＥ
+> **ＡＢＯＶＥ ＡＬＬ** is not affiliated with `WhatsApp Inc.` Misuse of the bot may lead to your `WhatsApp account` being banned. Use it at your own risk. 
 
-### 2. GET SESSION ID HERE
- 
-<a href="https://above-allpair.onrender.com/pair">
-  <img src="https://img.shields.io/badge/PAIR_CODE-blue" alt="Click Here to Get Pair-Code" width="110">
-</a>   
+---
 
-<a href="https://above-allpair.onrender.com/wasiqr">
-  <img src="https://img.shields.io/badge/QR CODE-green" alt="Click Here to Get QR-Code" width="90">
-</a>
-
-### DEPLOY ON RENDER
-
-1. If you don't have an account in RENDER, create one and deploy.
-   <br>
-   <a href="https://dashboard.render.com/select-repo?type=web" target="_blank">
-     <img alt="DEPLOY" src="https://img.shields.io/badge/-DEPLOY-black?style=for-the-badge&logo=render&logoColor=white"/>
-   </a>
-
-### DEPLOY ON CLEVER CLOUD
-
-1. If you don't have an account in Clever Cloud, create one and deploy.
-   <br>
-   <a href="https://api.clever-cloud.com/v2/sessions/signup?subscription_source=cta-home-signup" target="_blank">
-     <img alt="DEPLOY" src="https://img.shields.io/badge/-DEPLOY-orange?style=for-the-badge&logo=clever-cloud&logoColor=white"/>
-   </a>
-
-### DEPLOY ON HEROKU
-
-1. If you don't have an account in Heroku, create one.
-   <br>
-   <a href="https://signup.heroku.com/" target="_blank">
-     <img alt="Heroku" src="https://img.shields.io/badge/-Create-purple?style=for-the-badge&logo=heroku&logoColor=white"/>
-   </a>
-2. Now deploy.
-   <br>
-   <a href="https://dashboard.heroku.com/new?template=https://github.com/Jupiterbold05/Aboveall" target="_blank">
-     <img alt="DEPLOY" src="https://img.shields.io/badge/-DEPLOY-purple?style=for-the-badge&logo=heroku&logoColor=white"/>
-   </a>
-
-### DEPLOY ON REPLIT
-
-1. Deploy.
-   <br>
-   <a href="https://replit.com/github/Jupiterbold05/Aboveall" target="_blank">
-     <img alt="Replit" src="https://img.shields.io/badge/-Deploy-red?style=for-the-badge&logo=replit&logoColor=white"/>
-   </a>
-
-### DEPLOY ON RAILWAY
-
-1. Deploy.
-   <br>
-   <a href="https://railway.com/github/Jupiterbold05/Aboveall" target="_blank">
-     <img alt="Railway" src="https://img.shields.io/badge/-Deploy-green?style=for-the-badge&logo=railway&logoColor=white"/>
-   </a>
-
-<h2 align="center"> ⚠️ NOTE </h2>
-
-## ᴀʙᴏᴠᴇ ᴀʟʟ SCRIPT IS NOT OPENLY ALLOWED TO USED IN ANY OF YOUR PROJECTS BE WARNED!!!
-
-## ```Connect With Me```
-<img src="https://github.com/0xAbdulKhalid/0xAbdulKhalid/raw/main/assets/mdImages/handshake.gif" width="80"> 
-
+## 🌐 Ｃｏｎｎｅｃｔ Ｗｉｔｈ Ｍｅ
 <p align="center">
   <a href="https://wa.me/2348100835767">
-    <img src="https://img.shields.io/badge/Contact ᴀʙᴏᴠᴇ ᴀʟʟ-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
+    <img src="https://img.shields.io/badge/📞_Contact_ＡＢＯＶＥ_ＡＬＬ-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
   </a>
   <a href="https://whatsapp.com/channel/0029VaeW5Tw4yltQOYIO5E2D">
-    <img src="https://img.shields.io/badge/Join Official Channel-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
+    <img src="https://img.shields.io/badge/Join_Official_Channel-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
   </a>
 </p>
 
 <p align="center">
-  <img alt="Development" width="250" src="https://i.imgur.com/7KCi9Qh.jpeg" />
+  <img alt="Development" src="https://i.imgur.com/7KCi9Qh.jpeg" width="300" style="border-radius: 10px;"/>
 </p>
 
-## ```ᴀʙᴏᴠᴇ ᴀʟʟ PROFILE VIEWS 🧚```
-![Visitor Count](https://profile-counter.glitch.me/ᴀʙᴏᴠᴇ-ᴀʟʟ/count.svg)
+---
 
-## Support
-
-SUPPORT CHANNEL: <a href="https://whatsapp.com/channel/0029VaeW5Tw4yltQOYIO5E2D">
-  <img alt="WhatsApp" src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"/>
+## 💬 Ｓｕｐｐｏｒｔ Ｃｈａｎｎｅｌ
+Need help or have questions? Join our support channel:
+<a href="https://whatsapp.com/channel/0029VaeW5Tw4yltQOYIO5E2D">
+  <img alt="WhatsApp Support" src="https://img.shields.io/badge/💬_WhatsApp_Support-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"/>
 </a>
 
-### Please Give One Star ✨ & [follow me notify my updates 💗](https://github.com/Jupiterbold05/Aboveall)
-<b>Version -> 2.0.0</b>
+---
+
+### 🌟 Ｓｔａｒ ＆ Ｆｏｌｌｏｗ
+If you find this project helpful, please consider giving a star ⭐ and following:
+
+<p align="center">
+  <a href="https://github.com/Jupiterbold05/Aboveall/stargazers/">
+    <img src="https://img.shields.io/github/stars/Jupiterbold05/Aboveall?style=for-the-badge&color=FFD700" alt="Star this Repo"/>
+  </a>
+  <a href="https://github.com/Jupiterbold05">
+    <img src="https://img.shields.io/github/followers/Jupiterbold05?style=for-the-badge&color=FF4500" alt="Follow Me"/>
+  </a>
+</p>
+
+---
+
+### 📊 ＡＢＯＶＥ ＡＬＬ ＰＲＯＦＩＬＥ ＶＩＥＷＳ
+<p align="center">
+  <img src="https://profile-counter.glitch.me/ＡＢＯＶＥ-ＡＬＬ/count.svg" alt="Visitor Count"/>
+</p>
+
+<p align="center">
+  <img src="https://i.imgur.com/7KCi9Qh.jpeg" alt="Footer Image" width="400" style="border-radius: 15px;"/>
+</p>
