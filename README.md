@@ -93,7 +93,7 @@ The script for ᴀʙᴏᴠᴇ ᴀʟʟ is not openly allowed to be used in any of
 <a href="https://wa.me/2348100835767"><img src="https://img.shields.io/badge/Contact ᴀʙᴏᴠᴇ ᴀʟʟ-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
 <a href="https://whatsapp.com/channel/0029VaeW5Tw4yltQOYIO5E2D"><img src="https://img.shields.io/badge/Join Official Channel-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
 <p align="center">
-<img alt="Development" width="250" src="https://i.imgur.com/7KCi9Qh.jpeg" /> </p>
+<img alt="Development" width="250" src="https://i.imgur.com/Vat6Eox.jpeg" /> </p>
 
 ## Support
 SUPPORT CHANNEL: <a href="https://whatsapp.com/channel/0029VaeW5Tw4yltQOYIO5E2D"><img alt="WhatsApp" src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"/></a>
