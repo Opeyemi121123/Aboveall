@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3500&pause=1000&color=FF5733&vCenter=true&width=400&lines=🚀+ＡＢＯＶＥ+ＡＬＬ+ＷＨＡＴＳＡＰＰ+ＢＯＴ;💬+ＭＵＬＴＩ-ＤＥＶＩＣＥ+ＳＵＰＰＯＲＴ;🛠️+ＤＥＶＥＬＯＰＥＤ+ＢＹ+ＡＢＯＶＥ+ＡＬＬ" alt="Typing SVG Animation" />
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=20&duration=3500&pause=1000&color=FF5733&vCenter=true&width=400&lines=🚀+ＡＢＯＶＥ+ＡＬＬ+ＷＨＡＴＳＡＰＰ+ＢＯＴ;💬+ＭＵＬＴＩ-ＤＥＶＩＣＥ+ＳＵＰＰＯＲＴ;🛠️+ＤＥＶＥＬＯＰＥＤ+ＢＹ+ＡＢＯＶＥ+ＡＬＬ" alt="Typing SVG Animation" />
   </a>
 </p>
 
@@ -37,11 +37,11 @@ Pick your favorite platform to deploy ＡＢＯＶＥ ＡＬＬ:
 
 | Platform | Link |
 | -------- | ---- |
-| **Render** | [![Deploy on Render](https://img.shields.io/badge/-🚀_Deploy_on_Render-black?style=for-the-badge&logo=render&logoColor=white)](https://dashboard.render.com/select-repo?type=web) <br> [Create Account](https://dashboard.render.com/signup) |
-| **Clever Cloud** | [![Deploy on Clever Cloud](https://img.shields.io/badge/-☁️_Deploy_on_Clever_Cloud-orange?style=for-the-badge&logo=clever-cloud&logoColor=white)](https://api.clever-cloud.com/v2/sessions/signup?subscription_source=cta-home-signup) <br> [Create Account](https://api.clever-cloud.com/v2/sessions/signup?subscription_source=cta-home-signup) |
-| **Heroku** | [![Deploy on Heroku](https://img.shields.io/badge/-🚀_Deploy_on_Heroku-purple?style=for-the-badge&logo=heroku&logoColor=white)](https://dashboard.heroku.com/new?template=https://github.com/Jupiterbold05/Aboveall) <br> [Create Account](https://signup.heroku.com/) |
-| **Replit** | [![Deploy on Replit](https://img.shields.io/badge/-💻_Deploy_on_Replit-red?style=for-the-badge&logo=replit&logoColor=white)](https://replit.com/github/Jupiterbold05/Aboveall) <br> [Create Account](https://replit.com/signup) |
-| **Railway** | [![Deploy on Railway](https://img.shields.io/badge/-🚆_Deploy_on_Railway-green?style=for-the-badge&logo=railway&logoColor=white)](https://railway.com/github/Jupiterbold05/Aboveall) <br> [Create Account](https://railway.app/signup) |
+| **Render** | [![Deploy on Render](https://img.shields.io/badge/-🚀_Deploy_on_Render-black?style=for-the-badge&logo=render&logoColor=white)](https://dashboard.render.com/select-repo?type=web) <br> ![Render Logo](https://upload.wikimedia.org/wikipedia/commons/4/44/Render_logo.png) <br> [Create Account](https://dashboard.render.com/signup) |
+| **Clever Cloud** | [![Deploy on Clever Cloud](https://img.shields.io/badge/-☁️_Deploy_on_Clever_Cloud-orange?style=for-the-badge&logo=clever-cloud&logoColor=white)](https://api.clever-cloud.com/v2/sessions/signup?subscription_source=cta-home-signup) <br> ![Clever Cloud Logo](https://upload.wikimedia.org/wikipedia/commons/e/e1/Clever_Cloud_logo.png) <br> [Create Account](https://api.clever-cloud.com/v2/sessions/signup?subscription_source=cta-home-signup) |
+| **Heroku** | [![Deploy on Heroku](https://img.shields.io/badge/-🚀_Deploy_on_Heroku-purple?style=for-the-badge&logo=heroku&logoColor=white)](https://dashboard.heroku.com/new?template=https://github.com/Jupiterbold05/Aboveall) <br> ![Heroku Logo](https://upload.wikimedia.org/wikipedia/commons/5/5b/Heroku_logo.svg) <br> [Create Account](https://signup.heroku.com/) |
+| **Replit** | [![Deploy on Replit](https://img.shields.io/badge/-💻_Deploy_on_Replit-red?style=for-the-badge&logo=replit&logoColor=white)](https://replit.com/github/Jupiterbold05/Aboveall) <br> ![Replit Logo](https://upload.wikimedia.org/wikipedia/commons/0/0e/Replit_logo.png) <br> [Create Account](https://replit.com/signup) |
+| **Railway** | [![Deploy on Railway](https://img.shields.io/badge/-🚆_Deploy_on_Railway-green?style=for-the-badge&logo=railway&logoColor=white)](https://railway.com/github/Jupiterbold05/Aboveall) <br> ![Railway Logo](https://railway.app/img/logo.svg) <br> [Create Account](https://railway.app/signup) |
 
 ---
 
