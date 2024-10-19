@@ -3,9 +3,10 @@ const path = require('path');
 const os = require('os');
 const Config = require('../config');
 const { fancytext, tiny, runtime, formatp, prefix } = require("../lib");
+const astro_patch = require("../lib/plugins");
+
 const long = String.fromCharCode(0x200e);
 const readmore = long.repeat(0xfa1);
-const astro_patch = require("../lib/plugins");
 
 // Path to the anime audio folder
 const audioFolderPath = path.join(__dirname, '../lib');
@@ -17,7 +18,7 @@ async function sendAnimeBackgroundAudio(context, fileName) {
     if (fs.existsSync(filePath)) {
       const audio = fs.readFileSync(filePath);  // Read the audio file
       const messageOptions = {
-        audio: audio, 
+        audio: audio,
         mimetype: 'audio/mpeg'
       };
       // Send audio message using the correct sendMessage function
@@ -37,37 +38,46 @@ let currentDesignIndex = 0;
 function getNextMenuDesign() {
   const designs = [
     {
-      header: "✦✧━━━⟪ *{botname}*® ⟫━━━✧✦\n",
+      header: "🌟✨━━━⟪ *{botname}*® ⟫━━━✨🌟\n",
       lineSeparator: "┃ ",
-      commandPrefix: "🕸️ ",
-      footer: "✦✧━━━━━━━━━━━━━™✧✦",
-      emoji: "🦋",
-      greetingText: "Apologize to me, you're in my world!",
-      categorySeparator: "✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦\n",
+      commandPrefix: "🔹 ",
+      footer: "🌟✨━━━━━━━━━━━━━™✨🌟",
+      emoji: "💖",
+      greetingText: "Step into the world of magic!",
+      categorySeparator: "🌟✨🌟✨🌟✨🌟✨🌟✨🌟✨🌟\n",
     },
     {
-      header: "❖❖━━━━━⟪ *{botname}* ⟫━━━━━❖❖\n",
+      header: "⚜️✧━━━⟪ *{botname}* ⟫━━━✧⚜️\n",
       lineSeparator: "┃ ",
-      commandPrefix: "👽 ",
-      footer: "❖❖━━━━━━━━━━━━™❖❖",
-      emoji: "💫",
-      greetingText: "Welcome to my world!",
-      categorySeparator: "❖❖❖❖❖❖❖❖❖❖❖❖❖❖\n",
+      commandPrefix: "⚔️ ",
+      footer: "⚜️✧━━━━━━━━━━━━━™✧⚜️",
+      emoji: "🛡️",
+      greetingText: "Brave the day with me!",
+      categorySeparator: "⚜️✧⚜️✧⚜️✧⚜️✧⚜️✧⚜️✧⚜️✧\n",
     },
     {
-      header: "⚔️ ━━━⟪ *{botname}* ⟫━━━ ®⚔️\n",
+      header: "🌸🍃━━━⟪ *{botname}* ⟫━━━🍃🌸\n",
       lineSeparator: "┃ ",
-      commandPrefix: "🔥 ",
-      footer: "⚔️━━━━━━━━━━━━━™⚔️",
-      emoji: "☠️",
-      greetingText: "Go fuck yourself 🤡!",
-      categorySeparator: "⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️\n",
+      commandPrefix: "🍀 ",
+      footer: "🌸🍃━━━━━━━━━━━━━™🍃🌸",
+      emoji: "🌼",
+      greetingText: "Embrace the beauty around you!",
+      categorySeparator: "🌸🍃🌸🍃🌸🍃🌸🍃🌸🍃🌸🍃\n",
+    },
+    {
+      header: "🔮✨━━━⟪ *{botname}* ⟫━━━✨🔮\n",
+      lineSeparator: "┃ ",
+      commandPrefix: "🌠 ",
+      footer: "🔮✨━━━━━━━━━━━━━™✨🔮",
+      emoji: "🔷",
+      greetingText: "Unlock the mysteries with me!",
+      categorySeparator: "🔮✨🔮✨🔮✨🔮✨🔮✨🔮✨🔮\n",
     }
   ];
 
   // Get the current design
   const design = designs[currentDesignIndex];
-  
+
   // Update the index for the next design
   currentDesignIndex = (currentDesignIndex + 1) % designs.length;
 
@@ -90,7 +100,8 @@ astro_patch.smd({
   try {
     // Display loading messages
     const loadingMessages = [
-      "Ͳհҽ օղҽ ąҍօѵҽ ąӀӀ ☠️👑🌍 ìʂ ҟìղց"];
+      "Ͳհҽ օղҽ ąҍօѵҽ ąӀӀ ☠️👑🌍 ìʂ ҟìղց"
+    ];
     for (const msg of loadingMessages) {
       await context.sendMessage(context.chat, { text: msg });
       await sleep(1000); // Wait for 1 second between messages
@@ -104,14 +115,20 @@ astro_patch.smd({
     let greeting = "";
 
     // Anime-style greetings based on time of day
-    if (hours >= 5 && hours < 12) {
+    if (hours >= 5 && hours < 9) {
+      greeting = "🌅 *Good Early Morning* 🌅 - Let's seize the day!";
+    } else if (hours >= 9 && hours < 12) {
       greeting = "🌸 *Good Morning* 🌸 - Time for a fresh start!";
-    } else if (hours >= 12 && hours < 18) {
+    } else if (hours >= 12 && hours < 15) {
       greeting = "🌞 *Good Afternoon* 🌞 - Keep up the great work!";
-    } else if (hours >= 18 && hours < 22) {
+    } else if (hours >= 15 && hours < 18) {
+      greeting = "☀️ *Good Late Afternoon* ☀️ - Almost there!";
+    } else if (hours >= 18 && hours < 21) {
       greeting = "🌆 *Good Evening* 🌆 - Unwind and relax!";
+    } else if (hours >= 21 && hours < 23) {
+      greeting = "🌃 *Good Night* 🌃 - Rest and recharge!";
     } else {
-      greeting = "🌙 *Good Night* 🌙 - Rest and recharge!";
+      greeting = "🌙 *Late Night* 🌙 - Time to sleep!";
     }
 
     // Choose the next menu design
@@ -135,10 +152,10 @@ astro_patch.smd({
 
     let menuContent = `${header}`;
     menuContent += `${lineSeparator}👑 *Owner:* ${Config.ownername}\n`;
-    menuContent += `${lineSeparator}🕒 *Uptime:* ${runtime(process.uptime())}\n`;
-    menuContent += `${lineSeparator}💻 *RAM Usage:* ${formatp(os.totalmem() - os.freemem())}\n`;
+    menuContent += `${lineSeparator}⏳ *Uptime:* ${runtime(process.uptime())}\n`;
+    menuContent += `${lineSeparator}🖥️ *Memory Usage:* ${formatp(os.totalmem() - os.freemem())}\n`;
     menuContent += `${lineSeparator}📅 *Date:* ${currentDate}\n`;
-    menuContent += `${lineSeparator}📊 *Total Commands:* ${commands.length}\n`;
+    menuContent += `${lineSeparator}📝 *Total Commands:* ${commands.length}\n`;
     menuContent += `${lineSeparator}${greeting}\n\n`;
 
     // List commands by category with decorative separators
@@ -157,7 +174,7 @@ astro_patch.smd({
     const menuOptions = {
       'caption': menuContent,
       'contextInfo': {
-        'forwardingScore': 100, 
+        'forwardingScore': 100,
         'isForwarded': true,
         'externalAdReply': {
           'title': 'ąҍօѵҽ ąӀӀ',
@@ -177,4 +194,3 @@ astro_patch.smd({
     await context.error(`Error: ${error.message}`, error);
   }
 });
-        
