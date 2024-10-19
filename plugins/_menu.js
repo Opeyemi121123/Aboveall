@@ -34,7 +34,6 @@ async function sendAnimeBackgroundAudio(context, fileName) {
 let currentDesignIndex = 0;
 
 // Function to get the next menu design
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
