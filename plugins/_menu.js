@@ -7,6 +7,28 @@ const long = String.fromCharCode(0x200e);
 const readmore = long.repeat(0xfa1);
 const astro_patch = require("../lib/plugins");
 
+// Path to the anime audio folder
+const audioFolderPath = path.join(__dirname, '../lib');
+
+// Function to send smooth anime background audio
+async function sendAnimeBackgroundAudio(context, fileName) {
+  try {
+    const filePath = path.join(audioFolderPath, fileName);
+    if (fs.existsSync(filePath)) {
+      const audio = fs.readFileSync(filePath);
+      const messageOptions = {
+        audio: audio,
+        mimetype: 'audio/mpeg'
+      };
+      await context.sendMessage(context.chat, messageOptions);
+    } else {
+      throw new Error('File not found.');
+    }
+  } catch (error) {
+    await context.error(`🚨 Error sending background audio: ${error.message}`, error);
+  }
+}
+
 // Variable to keep track of the current design index
 let currentDesignIndex = 0;
 
@@ -44,7 +66,7 @@ function getNextMenuDesign() {
 
   // Get the current design
   const design = designs[currentDesignIndex];
-
+  
   // Update the index for the next design
   currentDesignIndex = (currentDesignIndex + 1) % designs.length;
 
@@ -139,7 +161,7 @@ astro_patch.smd({
         'isForwarded': true,
         'externalAdReply': {
           'title': 'The One Above All',
-          'sourceUrl': 'https://whatsapp.com/channel/0029Vas9N7MBA1f0yw8dZ515' // Updated URL
+          'sourceUrl': 'https://whatsapp.com/channel/0029VaeW5Tw4yltQOYIO5E2D'
         }
       },
       'ephemeralExpiration': 3000
@@ -147,6 +169,9 @@ astro_patch.smd({
 
     // Send the menu
     await context.sendUi(context.chat, menuOptions, context);
+
+    // Play soft background audio after sending the menu
+    await sendAnimeBackgroundAudio(context, 'alya.mp3');
 
   } catch (error) {
     await context.error(`🚨 Error: ${error.message}`, error);
