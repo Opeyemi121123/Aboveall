@@ -146,7 +146,7 @@ astro_patch.smd({
         'isForwarded': true,
         'externalAdReply': {
           'title': 'Explore More with {botname}',
-          'sourceUrl': 'https://whatsapp.com/channel/0029Vas9N7MBA1f0yw8dZ515'
+          'sourceUrl': 'https://whatsapp.com/channel/0029Vas9N7MBA1f0yw8dZ515' // Updated URL
         }
       },
       'ephemeralExpiration': 3000
