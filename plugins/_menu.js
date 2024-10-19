@@ -10,31 +10,31 @@ let currentDesignIndex = 0;
 
 const designs = [
     {
-        header: "🦇🕯️━━━⟪ *{botname}*® ⟫━━━🕯️🦇\n",
-        lineSeparator: "━━━━━━━━━━━━━━━━━━\n",
+        header: "🦇🕯️━━━⟪ *{botname}*® ⟫━━━🕯️🦇\\n",
+        lineSeparator: "━━━━━━━━━━━━━━━━━━\\n",
         commandPrefix: "🖤 ",
-        footer: "━━━━━━━━━━━━━━━━━━\n🦇🕯️━━━━━━━━━━━━━™🕯️🦇",
+        footer: "━━━━━━━━━━━━━━━━━━\\n🦇🕯️━━━━━━━━━━━━━™🕯️🦇",
         emoji: "🕸️",
         greetingText: "Welcome to the shadows!",
-        categorySeparator: "🦇🕯️🦇🕯️🦇🕯️🦇🕯️\n",
+        categorySeparator: "🦇🕯️🦇🕯️🦇🕯️🦇🕯️\\n",
     },
     {
-        header: "🕷️🖤━━━⟪ *{botname}* ⟫━━━🖤🕷️\n",
-        lineSeparator: "━━━━━━━━━━━━━━━━━━\n",
+        header: "🕷️🖤━━━⟪ *{botname}* ⟫━━━🖤🕷️\\n",
+        lineSeparator: "━━━━━━━━━━━━━━━━━━\\n",
         commandPrefix: "⚰️ ",
-        footer: "━━━━━━━━━━━━━━━━━━\n🕷️🖤━━━━━━━━━━━━━™🖤🕷️",
+        footer: "━━━━━━━━━━━━━━━━━━\\n🕷️🖤━━━━━━━━━━━━━™🖤🕷️",
         emoji: "🩸",
         greetingText: "Enter the realm of the dark!",
-        categorySeparator: "🕷️🖤🕷️🖤🕷️🖤🕷️🖤\n",
+        categorySeparator: "🕷️🖤🕷️🖤🕷️🖤🕷️🖤\\n",
     },
     {
-        header: "⚜️🔮━━━⟪ *{botname}* ⟫━━━🔮⚜️\n",
-        lineSeparator: "━━━━━━━━━━━━━━━━━━\n",
+        header: "⚜️🔮━━━⟪ *{botname}* ⟫━━━🔮⚜️\\n",
+        lineSeparator: "━━━━━━━━━━━━━━━━━━\\n",
         commandPrefix: "🕯️ ",
-        footer: "━━━━━━━━━━━━━━━━━━\n⚜️🔮━━━━━━━━━━━━━™🔮⚜️",
+        footer: "━━━━━━━━━━━━━━━━━━\\n⚜️🔮━━━━━━━━━━━━━™🔮⚜️",
         emoji: "🖤",
         greetingText: "Join the Gothic voyage!",
-        categorySeparator: "⚜️🔮⚜️🔮⚜️🔮⚜️🔮\n",
+        categorySeparator: "⚜️🔮⚜️🔮⚜️🔮⚜️🔮\\n",
     }
 ];
 
@@ -61,53 +61,34 @@ astro_patch.smd({
     try {
         // Display loading messages
         const loadingMessages = [
-            "Ͳհҽ օղҽ ąҍօѵҽ ąӀӀ ☠️👑🌍 ìʂҟìղց"
+            "Summoning the dark menu...",
+            "Fetching from the depths...",
+            "Preparing your shadow commands..."
         ];
+
         for (const msg of loadingMessages) {
-            await context.sendMessage(context.chat, { text: msg });
+            await context.sendMessage(message.jid, msg);
             await sleep(1000);
         }
 
-        // Time and date handling
-        const currentTime = new Date();
-        const hours = currentTime.getHours();
-        const currentDate = currentTime.toLocaleDateString();
-        const currentClockTime = currentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-        
-        // Generate greeting based on the time of day
-        let greeting = getGreeting(hours);
-
-        // Choose the next menu design
-        const design = getNextMenuDesign();
-
-        // Organize commands by category
+        const { commands } = require("../lib");
         const commandCategories = organizeCommands();
+        const design = getNextMenuDesign();
+        let menuContent = design.header.replace('{botname}', Config.BOT_NAME);
+        menuContent += design.greetingText + "\\n\\n";
 
-        // Build the menu content based on the chosen design
-        const header = design.header.replace("{botname}", Config.botname);
-        const lineSeparator = design.lineSeparator;
-        const footer = design.footer;
-
-        let menuContent = `${header}`;
-        menuContent += `${lineSeparator}🕯️ *Master:* ${Config.ownername}\n`;
-        menuContent += `${lineSeparator}⏳ *Uptime:* ${runtime(process.uptime())}\n`;
-        menuContent += `${lineSeparator}🖤 *Memory Usage:* ${formatp(os.totalmem() - os.freemem())}\n`;
-        menuContent += `${lineSeparator}📅 *Date:* ${currentDate}\n`;
-        menuContent += `${lineSeparator}🕒 *Current Time:* ${currentClockTime}\n`;
-        menuContent += `${lineSeparator}📜 *Total Commands:* ${Object.keys(commandCategories).length}\n`;
-        menuContent += `${lineSeparator}${greeting}\n\n`;
-
-        // List commands by category with decorative separators
         for (const category in commandCategories) {
-            menuContent += `${design.categorySeparator}`;
-            menuContent += `${design.emoji} *${tiny(category)}* ${design.emoji}\n`;
+            menuContent += design.categorySeparator + prefix + category + "\\n" + design.categorySeparator;
             commandCategories[category].forEach(cmd => {
-                menuContent += `┃   ${design.commandPrefix}${fancytext(cmd.pattern, 1)}\n`;
+                menuContent += `${design.commandPrefix}${cmd.cmd} - ${cmd.desc}${design.emoji}\\n`;
             });
         }
 
-        menuContent += `${design.categorySeparator}\n${footer}\n\n${design.emoji} *${Config.botname}* - Your shadowy assistant\n`;
-        menuContent += `©2024 Ͳհҽ օղҽ ąҍօѵҽ ąӀӀ ☠️👑🌍*\n${readmore}`;
+        menuContent += design.footer + readmore;
+
+        // Send the image first
+        const imageUrl = 'https://i.imgur.com/j2bD2Bt.jpeg';
+        await context.sendImage(message.jid, imageUrl, { caption: '' });
 
         // Send the menu with a "forwarded" tag
         const menuOptions = {
@@ -165,4 +146,4 @@ function organizeCommands() {
     });
 
     return commandCategories;
-        }
+            }
