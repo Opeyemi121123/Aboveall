@@ -14,28 +14,28 @@ let currentDesignIndex = 0;
 function getNextMenuDesign() {
   const designs = [
     {
-      header: "⛧═══⟪ *{botname}*® ⟫═══⛧\n",
-      lineSeparator: "┃ ",
-      commandPrefix: "✦ ",
-      footer: "⛧═════⟪🕸⟫═════⛧\n",
+      header: "✦════⟪ *{botname}*® ⟫════✦\n",
+      lineSeparator: "━┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅\n",
+      commandPrefix: "✧ ",
+      footer: "╚═════════════════════✦\n",
       greetingText: "Apologize to me, you're in my world!",
-      categorySeparator: "⦿⟫━┏━⟫⦿\n",
+      categorySeparator: "✧✧✧✧✧✧✧✧✧✧\n",
     },
     {
-      header: "☾══⟪ *{botname}* ⟫══☽\n",
-      lineSeparator: "┃ ",
-      commandPrefix: "⭑ ",
-      footer: "☾═════⟪❖⟫═════☽\n",
+      header: "❖════⟪ *{botname}* ⟫════❖\n",
+      lineSeparator: "━┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅\n",
+      commandPrefix: "☆ ",
+      footer: "╚═════════════════════❖\n",
       greetingText: "Welcome to my world!",
-      categorySeparator: "⦿⟫━┏━⟫⦿\n",
+      categorySeparator: "✧✧✧✧✧✧✧✧✧✧\n",
     },
     {
-      header: "✞══⟪ *{botname}* ⟫══✞\n",
-      lineSeparator: "┃ ",
+      header: "⚔️════⟪ *{botname}* ⟫════⚔️\n",
+      lineSeparator: "━┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅\n",
       commandPrefix: "✟ ",
-      footer: "✞═════⟪☠️⟫═════✞\n",
-      greetingText: "Go fuck yourself 🤡!",
-      categorySeparator: "⦿⟫━┏━⟫⦿\n",
+      footer: "╚═════════════════════⚔️\n",
+      greetingText: "Go fuck yourself!",
+      categorySeparator: "✧✧✧✧✧✧✧✧✧✧\n",
     }
   ];
 
@@ -57,14 +57,14 @@ function sleep(ms) {
 astro_patch.smd({
   'cmdname': "menu",
   'desc': "Displays a calm, readable command list",
-  'react': '🤡',
+  'react': '',
   'type': 'user',
   'filename': __filename
 }, async (context, message) => {
   try {
     // Display loading messages
     const loadingMessages = [
-      "Ͳհҽ օղҽ ąҍօѵҽ ąӀӀ ☠️👑🌍 ìʂ ҟìղց"];
+      "The one above all is king"];
     for (const msg of loadingMessages) {
       await context.sendMessage(context.chat, { text: msg });
       await sleep(1000); // Wait for 1 second between messages
@@ -81,19 +81,19 @@ astro_patch.smd({
 
     // Anime-style greetings based on time of day with additional intervals
     if (hours >= 5 && hours < 9) {
-      greeting = "🌸 *Good Morning* 🌸 - Time for a fresh start!";
+      greeting = "🌅 *Good Morning* - Time for a fresh start!";
     } else if (hours >= 9 && hours < 12) {
-      greeting = "🌞 *Mid-Morning* 🌞 - Keep the momentum going!";
+      greeting = "☕ *Mid-Morning* - Keep the momentum going!";
     } else if (hours >= 12 && hours < 15) {
-      greeting = "🌞 *Good Afternoon* 🌞 - Keep up the great work!";
+      greeting = "🌞 *Good Afternoon* - Keep up the great work!";
     } else if (hours >= 15 && hours < 18) {
-      greeting = "🌅 *Late Afternoon* 🌅 - Almost time to relax!";
+      greeting = "🌆 *Late Afternoon* - Almost time to relax!";
     } else if (hours >= 18 && hours < 20) {
-      greeting = "🌆 *Good Evening* 🌆 - Unwind and relax!";
+      greeting = "🌇 *Good Evening* - Unwind and relax!";
     } else if (hours >= 20 && hours < 22) {
-      greeting = "🌃 *Late Evening* 🌃 - Getting ready for rest!";
+      greeting = "🌙 *Late Evening* - Getting ready for rest!";
     } else {
-      greeting = "🌙 *Good Night* 🌙 - Rest and recharge!";
+      greeting = "🌜 *Good Night* - Rest and recharge!";
     }
 
     // Choose the next menu design
@@ -116,25 +116,27 @@ astro_patch.smd({
     const footer = design.footer;
 
     let menuContent = `${header}`;
-    menuContent += `${lineSeparator}👑 *Owner:* ${Config.ownername}\n`;
-    menuContent += `${lineSeparator}🕒 *Uptime:* ${runtime(process.uptime())}\n`;
+    menuContent += `${lineSeparator}👤 *Owner:* ${Config.ownername}\n`;
+    menuContent += `${lineSeparator}⏱️ *Uptime:* ${runtime(process.uptime())}\n`;
     menuContent += `${lineSeparator}💻 *RAM Usage:* ${formatp(os.totalmem() - os.freemem())}\n`;
     menuContent += `${lineSeparator}📅 *Date:* ${currentDate}\n`;
-    menuContent += `${lineSeparator}🕰️ *Current Time:* ${currentTimeString}\n`;
-    menuContent += `${lineSeparator}📊 *Total Commands:* ${commands.length}\n`;
+    menuContent += `${lineSeparator}🕒 *Current Time:* ${currentTimeString}\n`;
+    menuContent += `${lineSeparator}📋 *Total Commands:* ${commands.length}\n`;
     menuContent += `${lineSeparator}${greeting}\n\n`;
 
     // List commands by category with decorative separators
     for (const category in commandCategories) {
       menuContent += `${design.categorySeparator}`;
-      menuContent += `⦿ *${category.charAt(0).toUpperCase() + category.slice(1)}* ⦿\n`;
+      menuContent += `*${category.charAt(0).toUpperCase() + category.slice(1)}*\n`;
       commandCategories[category].forEach(cmd => {
         menuContent += `${lineSeparator}${design.commandPrefix}${fancytext(cmd, 1)}\n`;
       });
     }
 
-    menuContent += `\n${footer}\n⦿ *${Config.botname}* - Your assistant\n`;
-    menuContent += `©2024 Ͳհҽ օղҽ ąҍօѵҽ ąӀӀ ☠️👑🌍*\n${readmore}`;
+    menuContent += `\n${footer}\n*${Config.botname}* - Your assistant\n`;
+    menuContent += `©2024 The one above all is king\n`;
+    menuContent += `🔗 [WhatsApp Channel](https://whatsapp.com/channel/0029VaeW5Tw4yltQOYIO5E2D)\n`;
+    menuContent += `${readmore}`;
 
     // Send the menu
     await context.sendMessage(context.chat, { text: menuContent });
