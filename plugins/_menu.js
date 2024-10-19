@@ -10,31 +10,31 @@ let currentDesignIndex = 0;
 
 const designs = [
     {
-        header: "🦇🕯️━━━⟪ *{botname}*® ⟫━━━🕯️🦇\n",
+        header: "┏━••━━━⟪ *{botname}*® ⟫━━━••\n",
         lineSeparator: "━━━━━━━━━━━━━━━━━━\n",
-        commandPrefix: "🖤 ",
-        footer: "━━━━━━━━━━━━━━━━━━\n🦇🕯️━━━━━━━━━━━━━™🕯️🦇",
+        commandPrefix: "∆ ",
+        footer: "━━━━━━━━━━━━━━━━━━\n°°━━━━━━━━━━━━━™°°",
         emoji: "🕸️",
         greetingText: "Welcome to the shadows!",
-        categorySeparator: "🦇🕯️🦇🕯️🦇🕯️🦇🕯️\n",
+        categorySeparator: "━━━━━━━━━━━━━━━━━━\n",
     },
     {
-        header: "🕷️🖤━━━⟪ *{botname}* ⟫━━━🖤🕷️\n",
+        header: "┏━━━━━━━⟪ *{botname}* ⟫━━━━━━ \n",
         lineSeparator: "━━━━━━━━━━━━━━━━━━\n",
-        commandPrefix: "⚰️ ",
-        footer: "━━━━━━━━━━━━━━━━━━\n🕷️🖤━━━━━━━━━━━━━™🖤🕷️",
+        commandPrefix: "⦿ ",
+        footer: "━━━━━━━━━━━━━━━━━━\n••━━━━━━━━━━━━━••",
         emoji: "🩸",
         greetingText: "Enter the realm of the dark!",
-        categorySeparator: "🕷️🖤🕷️🖤🕷️🖤🕷️🖤\n",
+        categorySeparator: "━━━━━━━━━━━━━\n",
     },
     {
-        header: "⚜️🔮━━━⟪ *{botname}* ⟫━━━🔮⚜️\n",
+        header: "┏━••━━━⟪ *{botname}* ⟫━━━••\n",
         lineSeparator: "━━━━━━━━━━━━━━━━━━\n",
-        commandPrefix: "🕯️ ",
-        footer: "━━━━━━━━━━━━━━━━━━\n⚜️🔮━━━━━━━━━━━━━™🔮⚜️",
-        emoji: "🖤",
+        commandPrefix: "⦿ ",
+        footer: "━━━━━━━━━━━━━━━━━━\n••━━━━━━━━━━━━━",
+        emoji: "⦿",
         greetingText: "Join the Gothic voyage!",
-        categorySeparator: "⚜️🔮⚜️🔮⚜️🔮⚜️🔮\n",
+        categorySeparator: "━━━━━━••━━━━━━\n",
     }
 ];
 
@@ -109,10 +109,6 @@ astro_patch.smd({
         menuContent += `${design.categorySeparator}\n${footer}\n\n${design.emoji} *${Config.botname}* - Your shadowy assistant\n`;
         menuContent += `©2024 Ͳհҽ օղҽ ąҍօѵҽ ąӀӀ ☠️👑🌍*\n${readmore}`;
 
-        // Send the image first
-        const imageUrl = 'https://i.imgur.com/j2bD2Bt.jpeg';
-        await context.sendImage(message.jid, imageUrl, { caption: '' });
-
         // Send the menu with a "forwarded" tag
         const menuOptions = {
             'caption': menuContent,
@@ -138,7 +134,7 @@ astro_patch.smd({
 // Function to generate greeting based on the time of day
 function getGreeting(hours) {
     if (hours >= 5 && hours < 9) {
-        return "🦇 *Mornings are for the bold!* 🦇 - Seize the shadows!";
+        return "🦇 *Early morning na phone you fess carry na wa oh!* 🦇 - Seize the shadows!";
     } else if (hours >= 9 && hours < 12) {
         return "🕸️ *Good Morning, Dark Soul!* 🕸️ - Embrace the day!";
     } else if (hours >= 12 && hours < 15) {
@@ -150,7 +146,7 @@ function getGreeting(hours) {
     } else if (hours >= 21 && hours < 23) {
         return "⚰️ *Nightfall Calls!* ⚰️ - Rest and recharge!";
     } else {
-        return "🔮 *Late Night Mysteries!* 🔮 - Sleep tight!";
+        return "🔮 *Late Night Mysteries!* 🔮 - Baba sleep you no be winch!";
     }
 }
 
@@ -169,4 +165,5 @@ function organizeCommands() {
     });
 
     return commandCategories;
-            }
+}
+        
