@@ -143,26 +143,17 @@ astro_patch.smd({
         'filename': __filename
       }, async (context, message) => {
         try {
-          let submenuContent = `${design.categorySeparator}`;
-          submenuContent += `⦿ *${tiny(category)}* ⦿\n`;
+          const submenuHeader = `${design.header.replace("{botname}", Config.botname)}\n⦿ *${category}* ⦿\n`;
+          let submenuContent = `${submenuHeader}`;
           commandCategories[category].forEach(cmd => {
             submenuContent += `┃   ${design.commandPrefix}${fancytext(cmd, 1)}\n`;
           });
           submenuContent += `\n${footer}\n⦿ *${Config.botname}* - Your assistant\n`;
           submenuContent += `©2024 Ͳհҽ օղҽ ąҍօѵҽ ąӀӀ ☠️👑🌍*\n${readmore}`;
           
-          await context.sendUi(context.chat, {
-            'caption': submenuContent,
-            'contextInfo': {
-              'forwardingScore': 100, 
-              'isForwarded': true,
-              'externalAdReply': {
-                'title': 'ąҍօѵҽ ąӀӀ',
-                'sourceUrl': 'https://whatsapp.com/channel/0029VaeW5Tw4yltQOYIO5E2D'
-              }
-            },
-            'ephemeralExpiration': 3000
-          }, context);
+          await context.sendMessage(context.chat, {
+            text: submenuContent
+          });
         } catch (error) {
           await context.error(`Error: ${error.message}`, error);
         }
@@ -173,9 +164,8 @@ astro_patch.smd({
     menuContent += `©2024 Ͳհҽ օղҽ ąҍօѵҽ ąӀӀ ☠️👑🌍*\n${readmore}`;
 
     // Send the main menu with buttons
-    await context.sendButtonMessage(context.chat, {
-      contentText: menuContent,
-      footerText: `${Config.botname}`,
+    await context.sendMessage(context.chat, {
+      text: menuContent,
       buttons: buttons,
       headerType: 1
     });
