@@ -37,32 +37,46 @@ let currentDesignIndex = 0;
 function getNextMenuDesign() {
   const designs = [
     {
-      header: "✦✧━━━⟪ *{botname}*® ⟫━━━✧✦\n",
-      lineSeparator: "┃ ",
-      commandPrefix: "🕸️ ",
-      footer: "✦✧━━━━━━━━━━━━━™✧✦",
-      emoji: "🦋",
-      greetingText: "Apologize to me, you're in my world!",
-      categorySeparator: "✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦\n",
+      header: "🖤✨━━━⟪ *{botname}* ⟫━━━✨🖤\n",
+      lineSeparator: "❖ ",
+      commandPrefix: "🌌 ",
+      footer: "🖤✨━━━━━━━━━━━━━✨🖤",
+      emoji: "🌙",
+      greetingText: "Welcome, wanderer, to the realm of shadows!",
+      categorySeparator: "❖❖❖❖❖❖❖❖❖❖❖❖❖❖❖❖\n",
     },
     {
-      header: "❖❖━━━━━⟪ *{botname}* ⟫━━━━━❖❖\n",
-      lineSeparator: "┃ ",
-      commandPrefix: "👽 ",
-      footer: "❖❖━━━━━━━━━━━━™❖❖",
-      emoji: "💫",
-      greetingText: "Welcome to my world!",
-      categorySeparator: "❖❖❖❖❖❖❖❖❖❖❖❖❖❖\n",
+      header: "🌿🌑━━━━━⟪ *{botname}* 🦉 ⟫━━━━━🌑🌿\n",
+      lineSeparator: "🧙‍♂️ ",
+      commandPrefix: "🌺 ",
+      footer: "🌿🌑━━━━━━━━━━🌑🌿",
+      emoji: "🌕",
+      greetingText: "Step lightly, magic is afoot!",
+      categorySeparator: "🌿🌿🌿🌿🌿🌿🌿🌿🌿🌿🌿🌿🌿\n",
     },
     {
-      header: "⚔️ ━━━⟪ *{botname}* ⟫━━━ ®⚔️\n",
-      lineSeparator: "┃ ",
-      commandPrefix: "🔥 ",
-      footer: "⚔️━━━━━━━━━━━━━™⚔️",
-      emoji: "☠️",
-      greetingText: "Go fuck yourself 🤡!",
-      categorySeparator: "⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️\n",
-    }
+      header: "🔥🕷️━━━⟪ *{botname}* ⟫━━━🕷️🔥\n",
+      lineSeparator: "⚡ ",
+      commandPrefix: "🦴 ",
+      footer: "🔥🕷️━━━━━━━━━━━━━🕷️🔥",
+      emoji: "💀",
+      greetingText: "Enter if you dare... the chaos awaits!",
+      categorySeparator: "🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥\n",
+    },
+    {
+      header: "🔮🕯️━━━━⟪ *{botname}* ⟫━━━━🕯️🔮\n",
+      lineSeparator: "📜 ",
+      commandPrefix: "🕊️ ",
+      footer: "🔮🕯️━━━━━━━━━━━━🕯️🔮",
+      emoji: "✨",
+      greetingText: "Gaze into the abyss and let the journey begin!",
+      categorySeparator: "🔮🔮🔮🔮🔮🔮🔮🔮🔮🔮🔮🔮🔮\n",
+    },
+  ];
+
+  // Return a random design from the array
+  return designs[Math.floor(Math.random() * designs.length)];
+}
   ];
 
   // Get the current design
