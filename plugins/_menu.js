@@ -5,31 +5,7 @@ const Config = require('../config');
 const { fancytext, tiny, runtime, formatp, prefix } = require("../lib");
 const astro_patch = require("../lib/plugins");
 
-const long = String.fromCharCode(0x200e);
-const readmore = long.repeat(0xfa1);
-
-// Path to the anime audio folder
-const audioFolderPath = path.join(__dirname, '../lib');
-
-// Function to send smooth anime background audio
-async function sendAnimeBackgroundAudio(context, fileName) {
-  try {
-    const filePath = path.join(audioFolderPath, fileName);
-    if (fs.existsSync(filePath)) {
-      const audio = fs.readFileSync(filePath);  // Read the audio file
-      const messageOptions = {
-        audio: audio,
-        mimetype: 'audio/mpeg'
-      };
-      // Send audio message using the correct sendMessage function
-      await context.sendMessage(context.chat, messageOptions);
-    } else {
-      throw new Error('File not found.');
-    }
-  } catch (error) {
-    await context.error(`Error sending background audio: ${error.message}`, error);
-  }
-}
+const readmore = String.fromCharCode(0x200e).repeat(0x100); // Shortened readmore
 
 // Variable to keep track of the current design index
 let currentDesignIndex = 0;
@@ -177,9 +153,6 @@ astro_patch.smd({
 
     // Send the menu
     await context.sendUi(context.chat, menuOptions, context);
-
-    // Play soft background audio after sending the menu
-    await sendAnimeBackgroundAudio(context, 'alya.mp3');
 
   } catch (error) {
     await context.error(`Error: ${error.message}`, error);
