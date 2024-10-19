@@ -33,7 +33,7 @@ function getNextMenuDesign() {
       header: "⚔️ ━━━⟪ *{botname}* ⟫━━━ ®⚔️\n",
       lineSeparator: "┃ ",
       commandPrefix: "🔥 ",
-      footer: "⦿┏━━━⟫⦿\n",
+      footer: "⦿⟫━┏━⟫⦿\n",
       greetingText: "Go fuck yourself 🤡!",
       categorySeparator: "⦿⟫━┏━⟫⦿\n",
     }
@@ -124,45 +124,61 @@ astro_patch.smd({
     menuContent += `${lineSeparator}📊 *Total Commands:* ${commands.length}\n`;
     menuContent += `${lineSeparator}${greeting}\n\n`;
 
-    // List commands by category with decorative separators
+    // Create submenu buttons for each category
+    let buttons = [];
+
     for (const category in commandCategories) {
-      menuContent += `${design.categorySeparator}`;
-      menuContent += `⦿ *${tiny(category)}* ⦿\n`;
-      commandCategories[category].forEach(cmd => {
-        menuContent += `┃   ${design.commandPrefix}${fancytext(cmd, 1)}\n`;
+      const buttonId = `submenu_${category}`;
+      buttons.push({
+        buttonId: buttonId,
+        buttonText: { displayText: category.charAt(0).toUpperCase() + category.slice(1) },
+        type: 1
+      });
+
+      astro_patch.smd({
+        'cmdname': buttonId,
+        'desc': `Displays the ${category} commands`,
+        'react': '📜',
+        'type': 'user',
+        'filename': __filename
+      }, async (context, message) => {
+        try {
+          let submenuContent = `${design.categorySeparator}`;
+          submenuContent += `⦿ *${tiny(category)}* ⦿\n`;
+          commandCategories[category].forEach(cmd => {
+            submenuContent += `┃   ${design.commandPrefix}${fancytext(cmd, 1)}\n`;
+          });
+          submenuContent += `\n${footer}\n⦿ *${Config.botname}* - Your assistant\n`;
+          submenuContent += `©2024 Ͳհҽ օղҽ ąҍօѵҽ ąӀӀ ☠️👑🌍*\n${readmore}`;
+          
+          await context.sendUi(context.chat, {
+            'caption': submenuContent,
+            'contextInfo': {
+              'forwardingScore': 100, 
+              'isForwarded': true,
+              'externalAdReply': {
+                'title': 'ąҍօѵҽ ąӀӀ',
+                'sourceUrl': 'https://whatsapp.com/channel/0029VaeW5Tw4yltQOYIO5E2D'
+              }
+            },
+            'ephemeralExpiration': 3000
+          }, context);
+        } catch (error) {
+          await context.error(`Error: ${error.message}`, error);
+        }
       });
     }
 
     menuContent += `\n${footer}\n⦿ *${Config.botname}* - Your assistant\n`;
     menuContent += `©2024 Ͳհҽ օղҽ ąҍօѵҽ ąӀӀ ☠️👑🌍*\n${readmore}`;
 
-    // Segment the menu for better readability
-    const segments = menuContent.split('\n').reduce((acc, line, index) => {
-      const segmentIndex = Math.floor(index / 20); // Adjust the number to change the segment size
-      if (!acc[segmentIndex]) {
-        acc[segmentIndex] = [];
-      }
-      acc[segmentIndex].push(line);
-      return acc;
-    }, []).map(segment => segment.join('\n'));
-
-    // Send each segment of the menu
-    for (const segment of segments) {
-      const menuOptions = {
-        'caption': segment,
-        'contextInfo': {
-          'forwardingScore': 100, 
-          'isForwarded': true,
-          'externalAdReply': {
-            'title': 'ąҍօѵҽ ąӀӀ',
-            'sourceUrl': 'https://whatsapp.com/channel/0029VaeW5Tw4yltQOYIO5E2D'
-          }
-        },
-        'ephemeralExpiration': 3000
-      };
-      await context.sendUi(context.chat, menuOptions, context);
-      await sleep(1000); // Wait for 1 second between segments
-    }
+    // Send the main menu with buttons
+    await context.sendButtonMessage(context.chat, {
+      contentText: menuContent,
+      footerText: `${Config.botname}`,
+      buttons: buttons,
+      headerType: 1
+    });
 
   } catch (error) {
     await context.error(`Error: ${error.message}`, error);
