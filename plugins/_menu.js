@@ -14,37 +14,37 @@ let currentDesignIndex = 0;
 function getNextMenuDesign() {
   const designs = [
     {
-      header: "🌟✨━━━⟪ *{botname}* ⟫━━━✨🌟\n",
-      lineSeparator: "─ ",
-      commandPrefix: "➤ ",
-      footer: "🌌✨━━━━━━━━━━━━━✨🌌",
-      emoji: "🔹",
-      greetingText: "Step into a world of possibilities.",
-      categorySeparator: "━━━━━━━━━━━━━\n",
+      header: "🌌✨━━━⟪ *{botname}*® ⟫━━━✨🌌\n",
+      lineSeparator: "💫 ",
+      commandPrefix: "🌠 ➤ ",
+      footer: "🌙✨━━━━━━━━━━━━━━✨🌙",
+      emoji: "🪄",
+      greetingText: "Welcome, traveler! You've stepped into a realm of mystery.",
+      categorySeparator: "🌠🌠🌠🌠🌠🌠🌠🌠🌠🌠🌠🌠🌠🌠🌠🌠\n",
     },
     {
-      header: "🌿🍃━━━⟪ *{botname}* ⟫━━━🍃🌿\n",
-      lineSeparator: "• ",
-      commandPrefix: "↠ ",
-      footer: "🌿🍃━━━━━━━━━━━━━🍃🌿",
-      emoji: "🌱",
-      greetingText: "Welcome, seeker of knowledge. Here’s what I can do for you:",
-      categorySeparator: "⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯\n",
+      header: "🌿🌟━━━━━⟪ *{botname}* ⟫━━━━━🌟🌿\n",
+      lineSeparator: "🌿 ",
+      commandPrefix: "🌸 ➤ ",
+      footer: "🌸🌿━━━━━━━━━━━━━🌿🌸",
+      emoji: "🍃",
+      greetingText: "Nature’s wisdom guides you here, be at peace.",
+      categorySeparator: "🌿🌿🌿🌿🌿🌿🌿🌿🌿🌿🌿🌿🌿\n",
     },
     {
-      header: "🔥⚡━━⟪ *{botname}* ⟫━━⚡🔥\n",
-      lineSeparator: "‣ ",
-      commandPrefix: "⚔️ ",
-      footer: "🔥⚡━━━━━━━━━━━━━━⚡🔥",
-      emoji: "🛡️",
-      greetingText: "Ready for action? Here’s your command arsenal:",
-      categorySeparator: "─────────────────\n",
+      header: "🔥⚔️━━⟪ *{botname}* ⟫━━⚔️🔥\n",
+      lineSeparator: "🔥 ",
+      commandPrefix: "💥 ➤ ",
+      footer: "🔥⚔️━━━━━━━━━━━━━⚔️🔥",
+      emoji: "💀",
+      greetingText: "Brave souls face challenges head-on. Prepare yourself!",
+      categorySeparator: "🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥\n",
     }
   ];
 
   // Get the current design
   const design = designs[currentDesignIndex];
-  
+
   // Update the index for the next design
   currentDesignIndex = (currentDesignIndex + 1) % designs.length;
 
@@ -56,10 +56,10 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-// Command handler with an updated layout and style
+// Command handler with enhanced theme and aesthetics
 astro_patch.smd({
   'cmdname': "menu",
-  'desc': "Displays a refreshed command list with style",
+  'desc': "Displays a vivid command list with style",
   'react': '🤡',
   'type': 'user',
   'filename': __filename
@@ -67,8 +67,7 @@ astro_patch.smd({
   try {
     // Display a loading message with a stylish touch
     const loadingMessages = [
-      "🌌 Preparing your personalized experience...",
-      "✨ Just a moment, bringing the magic to you!"
+      "💫 The One Above All ☠️👑🌍 is preparing your experience..."
     ];
     for (const msg of loadingMessages) {
       await context.sendMessage(context.chat, { text: msg });
@@ -82,21 +81,15 @@ astro_patch.smd({
     const currentDate = currentTime.toLocaleDateString();
     let greeting = "";
 
-    // Adjusted time intervals for more specific greetings
-    if (hours >= 5 && hours < 9) {
-      greeting = "🌄 *Rise and Shine!* - A new dawn awaits, let's make it count.";
-    } else if (hours >= 9 && hours < 12) {
-      greeting = "☀️ *Good Morning!* - Bright and early, ready to conquer the day!";
-    } else if (hours >= 12 && hours < 15) {
-      greeting = "🌞 *Good Noon!* - Keep your spirits high as the sun shines!";
-    } else if (hours >= 15 && hours < 18) {
-      greeting = "🌇 *Good Afternoon!* - A little break might go a long way.";
-    } else if (hours >= 18 && hours < 20) {
-      greeting = "🌆 *Good Evening!* - The sunset brings peace, enjoy the moment.";
-    } else if (hours >= 20 && hours < 23) {
-      greeting = "🌙 *Good Night!* - The stars are out, time to relax.";
+    // Refined greetings based on time of day
+    if (hours >= 5 && hours < 12) {
+      greeting = "🌅 *Good Morning!* 🌅 - Let’s conquer the day together!";
+    } else if (hours >= 12 && hours < 17) {
+      greeting = "🌞 *Good Afternoon!* 🌞 - Hope your day is going splendidly!";
+    } else if (hours >= 17 && hours < 20) {
+      greeting = "🌇 *Good Evening!* 🌇 - Unwind and enjoy the twilight!";
     } else {
-      greeting = "✨ *Late Night Vibes!* - Perfect time for introspection and dreams.";
+      greeting = "🌌 *Good Night!* 🌌 - May your dreams be as serene as the stars.";
     }
 
     // Choose the next menu design
@@ -119,14 +112,14 @@ astro_patch.smd({
     const footer = design.footer;
 
     let menuContent = `${header}`;
-    menuContent += `${lineSeparator}👤 *Owner:* ${Config.ownername}\n`;
-    menuContent += `${lineSeparator}⏳ *Uptime:* ${runtime(process.uptime())}\n`;
-    menuContent += `${lineSeparator}🧠 *Memory Usage:* ${formatp(os.totalmem() - os.freemem())}\n`;
+    menuContent += `${lineSeparator}👑 *Owner:* ${Config.ownername}\n`;
+    menuContent += `${lineSeparator}⏱️ *Uptime:* ${runtime(process.uptime())}\n`;
+    menuContent += `${lineSeparator}💻 *Memory Usage:* ${formatp(os.totalmem() - os.freemem())}\n`;
     menuContent += `${lineSeparator}📅 *Date:* ${currentDate}\n`;
-    menuContent += `${lineSeparator}📚 *Total Commands:* ${commands.length}\n`;
+    menuContent += `${lineSeparator}📊 *Total Commands:* ${commands.length}\n`;
     menuContent += `${lineSeparator}${greeting}\n\n`;
 
-    // List commands by category with decorative separators
+    // List commands by category with aesthetic separators
     for (const category in commandCategories) {
       menuContent += `${design.categorySeparator}`;
       menuContent += `${design.emoji} *${tiny(category)}* ${design.emoji}\n`;
@@ -135,8 +128,8 @@ astro_patch.smd({
       });
     }
 
-    menuContent += `\n${footer}\n\n${design.emoji} *${Config.botname}* - Here to assist whenever you need.\n`;
-    menuContent += `💫 Made with care by The One Above All.\n${readmore}`;
+    menuContent += `\n${footer}\n\n${design.emoji} *${Config.botname}* - Your trusted guide\n`;
+    menuContent += `©2024 The One Above All ☠️👑🌍\n${readmore}`;
 
     // Send the menu with a "forwarded" tag
     const menuOptions = {
@@ -145,7 +138,7 @@ astro_patch.smd({
         'forwardingScore': 100, 
         'isForwarded': true,
         'externalAdReply': {
-          'title': 'Explore More with {botname}',
+          'title': 'The One Above All',
           'sourceUrl': 'https://whatsapp.com/channel/0029Vas9N7MBA1f0yw8dZ515' // Updated URL
         }
       },
