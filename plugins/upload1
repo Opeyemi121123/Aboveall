@@ -21,7 +21,7 @@ async function uploadImage(buffer) {
 // Command registration
 smd(
   {
-    cmdname: "upload",
+    cmdname: "upload1",
     desc: "Upload an image to telegra.ph",
     react: "📤",
     type: "misc",
