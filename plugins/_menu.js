@@ -134,11 +134,12 @@ astro_patch.smd({
     const footer = design.footer;
 
     let menuContent = `${header}`;
-    menuContent += `${lineSeparator}👤 *Owner:* ${Config.ownername}\n`;
-    menuContent += `${lineSeparator}⏳ *Uptime:* ${runtime(process.uptime())}\n`;
-    menuContent += `${lineSeparator}🧠 *Memory Usage:* ${formatp(os.totalmem() - os.freemem())}\n`;
+    menuContent += `${lineSeparator}👑 *Owner:* ${Config.ownername}\n`;
+    menuContent += `${lineSeparator}⏱️ *Uptime:* ${runtime(process.uptime())}\n`;
+    menuContent += `${lineSeparator}💻 *Memory Usage:* ${formatp(os.totalmem() - os.freemem())}\n`;
     menuContent += `${lineSeparator}📅 *Date:* ${currentDate}\n`;
-    menuContent += `${lineSeparator}📚 *Total Commands:* ${commands.length}\n`;
+    menuContent += `${lineSeparator}📊 *Total Commands:* ${commands.length}\n`;
+    menuContent += `${lineSeparator}${greeting}\n\n`;
 
     // List commands by category with aesthetic separators
     for (const category in commandCategories) {
