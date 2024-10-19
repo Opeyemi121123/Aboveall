@@ -14,26 +14,26 @@ let currentDesignIndex = 0;
 function getNextMenuDesign() {
   const designs = [
     {
-      header: "✦✧━━━⟪ *{botname}*® ⟫━━━✧✦\n",
+      header: "⛧═══⟪ *{botname}*® ⟫═══⛧\n",
       lineSeparator: "┃ ",
-      commandPrefix: "🕸️ ",
-      footer: "⦿⟫━┏━⟫⦿\n",
+      commandPrefix: "✦ ",
+      footer: "⛧═════⟪🕸⟫═════⛧\n",
       greetingText: "Apologize to me, you're in my world!",
       categorySeparator: "⦿⟫━┏━⟫⦿\n",
     },
     {
-      header: "❖❖━━━━━⟪ *{botname}* ⟫━━━━━❖❖\n",
+      header: "☾══⟪ *{botname}* ⟫══☽\n",
       lineSeparator: "┃ ",
-      commandPrefix: "👽 ",
-      footer: "⦿⟫━┏━⟫⦿\n",
+      commandPrefix: "⭑ ",
+      footer: "☾═════⟪❖⟫═════☽\n",
       greetingText: "Welcome to my world!",
       categorySeparator: "⦿⟫━┏━⟫⦿\n",
     },
     {
-      header: "⚔️ ━━━⟪ *{botname}* ⟫━━━ ®⚔️\n",
+      header: "✞══⟪ *{botname}* ⟫══✞\n",
       lineSeparator: "┃ ",
-      commandPrefix: "🔥 ",
-      footer: "⦿⟫━┏━⟫⦿\n",
+      commandPrefix: "✟ ",
+      footer: "✞═════⟪☠️⟫═════✞\n",
       greetingText: "Go fuck yourself 🤡!",
       categorySeparator: "⦿⟫━┏━⟫⦿\n",
     }
@@ -124,51 +124,20 @@ astro_patch.smd({
     menuContent += `${lineSeparator}📊 *Total Commands:* ${commands.length}\n`;
     menuContent += `${lineSeparator}${greeting}\n\n`;
 
-    // Create submenu buttons for each category
-    let buttons = [];
-
+    // List commands by category with decorative separators
     for (const category in commandCategories) {
-      const buttonId = `submenu_${category}`;
-      buttons.push({
-        buttonId: buttonId,
-        buttonText: { displayText: category.charAt(0).toUpperCase() + category.slice(1) },
-        type: 1
-      });
-
-      astro_patch.smd({
-        'cmdname': buttonId,
-        'desc': `Displays the ${category} commands`,
-        'react': '📜',
-        'type': 'user',
-        'filename': __filename
-      }, async (context, message) => {
-        try {
-          const submenuHeader = `${design.header.replace("{botname}", Config.botname)}\n⦿ *${category}* ⦿\n`;
-          let submenuContent = `${submenuHeader}`;
-          commandCategories[category].forEach(cmd => {
-            submenuContent += `┃   ${design.commandPrefix}${fancytext(cmd, 1)}\n`;
-          });
-          submenuContent += `\n${footer}\n⦿ *${Config.botname}* - Your assistant\n`;
-          submenuContent += `©2024 Ͳհҽ օղҽ ąҍօѵҽ ąӀӀ ☠️👑🌍*\n${readmore}`;
-          
-          await context.sendMessage(context.chat, {
-            text: submenuContent
-          });
-        } catch (error) {
-          await context.error(`Error: ${error.message}`, error);
-        }
+      menuContent += `${design.categorySeparator}`;
+      menuContent += `⦿ *${category.charAt(0).toUpperCase() + category.slice(1)}* ⦿\n`;
+      commandCategories[category].forEach(cmd => {
+        menuContent += `${lineSeparator}${design.commandPrefix}${fancytext(cmd, 1)}\n`;
       });
     }
 
     menuContent += `\n${footer}\n⦿ *${Config.botname}* - Your assistant\n`;
     menuContent += `©2024 Ͳհҽ օղҽ ąҍօѵҽ ąӀӀ ☠️👑🌍*\n${readmore}`;
 
-    // Send the main menu with buttons
-    await context.sendMessage(context.chat, {
-      text: menuContent,
-      buttons: buttons,
-      headerType: 1
-    });
+    // Send the menu
+    await context.sendMessage(context.chat, { text: menuContent });
 
   } catch (error) {
     await context.error(`Error: ${error.message}`, error);
