@@ -14,13 +14,14 @@ let currentDesignIndex = 0;
 function getNextMenuDesign() {
   const designs = [
     {
-      header: "🦇🕯️━━━⟪ *{botname}*® ⟫━━━🕯️🦇\n",
+      header: "┏━━⟪ {botname} ⟫━━⦿\n",
       lineSeparator: "┃ ",
-      commandPrefix: "🖤 ",
-      footer: "🦇🕯️━━━━━━━━━━━━━™🕯️🦇",
-      emoji: "🕸️",
+      commandPrefix: " |  ",
+      footer: "┗━━━━━━━━━━━━━━━⦿",
+      emoji: "❖",
+      categorySeparator: "┌──『 ",
+      categoryFooter: "』──❖\n",
       greetingText: "Welcome to the shadows!",
-      categorySeparator: "🦇🕯️🦇🕯️🦇🕯️🦇🕯️🦇🕯️🦇🕯️\n",
     },
     {
       header: "🕷️🖤━━━⟪ *{botname}* ⟫━━━🖤🕷️\n",
@@ -79,6 +80,7 @@ astro_patch.smd({
     const currentTime = new Date();
     const hours = currentTime.getHours();
     const currentDate = currentTime.toLocaleDateString();
+    const currentTimeString = currentTime.toLocaleTimeString('en-US');
     let greeting = "";
 
     // Gothic-style fun and catchy greetings based on time of day
@@ -118,24 +120,22 @@ astro_patch.smd({
     const footer = design.footer;
 
     let menuContent = `${header}`;
-    menuContent += `${lineSeparator}🕯️ *Master:* ${Config.ownername}\n`;
-    menuContent += `${lineSeparator}⏳ *Uptime:* ${runtime(process.uptime())}\n`;
-    menuContent += `${lineSeparator}🖤 *Memory Usage:* ${formatp(os.totalmem() - os.freemem())}\n`;
-    menuContent += `${lineSeparator}📅 *Date:* ${currentDate}\n`;
-    menuContent += `${lineSeparator}📜 *Total Commands:* ${commands.length}\n`;
-    menuContent += `${lineSeparator}${greeting}\n\n`;
+    menuContent += `${lineSeparator}✗ Theme:- ${Config.botname}\n`;
+    menuContent += `${lineSeparator}✗ Owner:- ${Config.ownername}\n`;
+    menuContent += `${lineSeparator}✗ Plugins:- ${commands.length}\n`;
+    menuContent += `${lineSeparator}✗ Uptime:- ${runtime(process.uptime())}\n`;
+    menuContent += `${lineSeparator}✗ Mem:- ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}\n`;
+    menuContent += `${lineSeparator}✗ Time:- ${currentTimeString}\n`;
+    menuContent += `${lineSeparator}✗ Date:- ${currentDate}\n`;
+    menuContent += `${footer}\n\n`;
 
     // List commands by category with decorative separators
     for (const category in commandCategories) {
-      menuContent += `${design.categorySeparator}`;
-      menuContent += `${design.emoji} *${tiny(category)}* ${design.emoji}\n`;
+      menuContent += `${design.categorySeparator}${category}${design.categoryFooter}`;
       commandCategories[category].forEach(cmd => {
-        menuContent += `┃   ${design.commandPrefix}${fancytext(cmd, 1)}\n`;
+        menuContent += `${design.commandPrefix}${fancytext(cmd, 1)}\n`;
       });
     }
-
-    menuContent += `\n${footer}\n\n${design.emoji} *${Config.botname}* - Your shadowy assistant\n`;
-    menuContent += `©2024 Ͳհҽ օղҽ ąҍօѵҽ ąӀӀ ☠️👑🌍*\n${readmore}`;
 
     // Send the menu with a "forwarded" tag
     const menuOptions = {
