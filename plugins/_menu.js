@@ -34,44 +34,117 @@ async function sendAnimeBackgroundAudio(context, fileName) {
 let currentDesignIndex = 0;
 
 // Function to get the next menu design
-function getNextMenuDesign() {
-  const designs = [
-    {
-      header: "🖤✨━━━⟪ *{botname}* ⟫━━━✨🖤\n",
-      lineSeparator: "❖ ",
-      commandPrefix: "🌌 ",
-      footer: "🖤✨━━━━━━━━━━━━━✨🖤",
-      emoji: "🌙",
-      greetingText: "Welcome, wanderer, to the realm of shadows!",
-      categorySeparator: "❖❖❖❖❖❖❖❖❖❖❖❖❖❖❖❖\n",
-    },
-    {
-      header: "🌿🌑━━━━━⟪ *{botname}* 🦉 ⟫━━━━━🌑🌿\n",
-      lineSeparator: "🧙‍♂️ ",
-      commandPrefix: "🌺 ",
-      footer: "🌿🌑━━━━━━━━━━🌑🌿",
-      emoji: "🌕",
-      greetingText: "Step lightly, magic is afoot!",
-      categorySeparator: "🌿🌿🌿🌿🌿🌿🌿🌿🌿🌿🌿🌿🌿\n",
-    },
-    {
-      header: "🔥🕷️━━━⟪ *{botname}* ⟫━━━🕷️🔥\n",
-      lineSeparator: "⚡ ",
-      commandPrefix: "🦴 ",
-      footer: "🔥🕷️━━━━━━━━━━━━━🕷️🔥",
-      emoji: "💀",
-      greetingText: "Enter if you dare... the chaos awaits!",
-      categorySeparator: "🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥\n",
-    },
-    {
-      header: "🔮🕯️━━━━⟪ *{botname}* ⟫━━━━🕯️🔮\n",
-      lineSeparator: "📜 ",
-      commandPrefix: "🕊️ ",
-      footer: "🔮🕯️━━━━━━━━━━━━🕯️🔮",
-      emoji: "✨",
-      greetingText: "Gaze into the abyss and let the journey begin!",
-      categorySeparator: "🔮🔮🔮🔮🔮🔮🔮🔮🔮🔮🔮🔮🔮\n",
-    },
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expandable Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            padding: 20px;
+        }
+        .menu-header {
+            cursor: pointer;
+            padding: 10px;
+            background: #2C2C2C;
+            border: 1px solid #444;
+            border-radius: 5px;
+            margin: 5px 0;
+            transition: background 0.3s;
+        }
+        .menu-header:hover {
+            background: #444;
+        }
+        .menu-content {
+            display: none;
+            padding: 10px;
+            background: #1E1E1E;
+            border-left: 3px solid #888;
+            margin: 5px 0 15px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="menuContainer"></div>
+
+    <script>
+        function getNextMenuDesign() {
+            const designs = [
+                {
+                    header: "🖤✨━━━⟪ *{botname}* ⟫━━━✨🖤",
+                    commands: ["Help", "Info", "Settings"],
+                    greetingText: "Welcome, wanderer, to the realm of shadows!",
+                },
+                {
+                    header: "🌿🌑━━━━━⟪ *{botname}* 🦉 ⟫━━━━━🌑🌿",
+                    commands: ["Magic", "Potions", "Creatures"],
+                    greetingText: "Step lightly, magic is afoot!",
+                },
+                {
+                    header: "🔥🕷️━━━⟪ *{botname}* ⟫━━━🕷️🔥",
+                    commands: ["Chaos", "Destruction", "Adventure"],
+                    greetingText: "Enter if you dare... the chaos awaits!",
+                },
+                {
+                    header: "🔮🕯️━━━━⟪ *{botname}* ⟫━━━━🕯️🔮",
+                    commands: ["Divination", "Herbs", "Spells"],
+                    greetingText: "Gaze into the abyss and let the journey begin!",
+                },
+            ];
+
+            return designs;
+        }
+
+        function renderMenu() {
+            const menuContainer = document.getElementById('menuContainer');
+            const designs = getNextMenuDesign();
+
+            designs.forEach(design => {
+                // Create menu header
+                const header = document.createElement('div');
+                header.className = 'menu-header';
+                header.innerText = design.header;
+                menuContainer.appendChild(header);
+
+                // Create menu content
+                const content = document.createElement('div');
+                content.className = 'menu-content';
+
+                // Add greeting text
+                const greeting = document.createElement('p');
+                greeting.innerText = design.greetingText;
+                content.appendChild(greeting);
+
+                // Add commands as a list
+                const commandList = document.createElement('ul');
+                design.commands.forEach(command => {
+                    const listItem = document.createElement('li');
+                    listItem.innerText = command;
+                    commandList.appendChild(listItem);
+                });
+                content.appendChild(commandList);
+
+                // Append content to menu
+                menuContainer.appendChild(content);
+
+                // Add click event to toggle content visibility
+                header.addEventListener('click', () => {
+                    content.style.display = content.style.display === 'none' ? 'block' : 'none';
+                });
+            });
+        }
+
+        // Initialize the menu
+        renderMenu();
+    </script>
+</body>
+</html>
   ];
 
   // Return a random design from the array
