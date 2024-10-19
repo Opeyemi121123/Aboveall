@@ -11,30 +11,30 @@ let currentDesignIndex = 0;
 const designs = [
     {
         header: "🦇🕯️━━━⟪ *{botname}*® ⟫━━━🕯️🦇\n",
-        lineSeparator: "┃ ",
+        lineSeparator: "━━━━━━━━━━━━━━━━━━\n",
         commandPrefix: "🖤 ",
-        footer: "🦇🕯️━━━━━━━━━━━━━™🕯️🦇",
+        footer: "━━━━━━━━━━━━━━━━━━\n🦇🕯️━━━━━━━━━━━━━™🕯️🦇",
         emoji: "🕸️",
         greetingText: "Welcome to the shadows!",
-        categorySeparator: "🦇🕯️🦇🕯️🦇🕯️🦇🕯️🦇🕯️🦇🕯️\n",
+        categorySeparator: "🦇🕯️🦇🕯️🦇🕯️🦇🕯️\n",
     },
     {
         header: "🕷️🖤━━━⟪ *{botname}* ⟫━━━🖤🕷️\n",
-        lineSeparator: "┃ ",
+        lineSeparator: "━━━━━━━━━━━━━━━━━━\n",
         commandPrefix: "⚰️ ",
-        footer: "🕷️🖤━━━━━━━━━━━━━™🖤🕷️",
+        footer: "━━━━━━━━━━━━━━━━━━\n🕷️🖤━━━━━━━━━━━━━™🖤🕷️",
         emoji: "🩸",
         greetingText: "Enter the realm of the dark!",
-        categorySeparator: "🕷️🖤🕷️🖤🕷️🖤🕷️🖤🕷️🖤🕷️🖤\n",
+        categorySeparator: "🕷️🖤🕷️🖤🕷️🖤🕷️🖤\n",
     },
     {
         header: "⚜️🔮━━━⟪ *{botname}* ⟫━━━🔮⚜️\n",
-        lineSeparator: "┃ ",
+        lineSeparator: "━━━━━━━━━━━━━━━━━━\n",
         commandPrefix: "🕯️ ",
-        footer: "⚜️🔮━━━━━━━━━━━━━™🔮⚜️",
+        footer: "━━━━━━━━━━━━━━━━━━\n⚜️🔮━━━━━━━━━━━━━™🔮⚜️",
         emoji: "🖤",
         greetingText: "Join the Gothic voyage!",
-        categorySeparator: "⚜️🔮⚜️🔮⚜️🔮⚜️🔮⚜️🔮⚜️🔮⚜️\n",
+        categorySeparator: "⚜️🔮⚜️🔮⚜️🔮⚜️🔮\n",
     }
 ];
 
@@ -53,7 +53,7 @@ function sleep(ms) {
 // Command handler with subtle anime theme
 astro_patch.smd({
     'cmdname': "menu",
-    'desc': "Displays a calm, readable command list with detailed descriptions",
+    'desc': "Displays a calm, readable command list",
     'react': '🕸️',
     'type': 'user',
     'filename': __filename
@@ -102,11 +102,11 @@ astro_patch.smd({
             menuContent += `${design.categorySeparator}`;
             menuContent += `${design.emoji} *${tiny(category)}* ${design.emoji}\n`;
             commandCategories[category].forEach(cmd => {
-                menuContent += `┃   ${design.commandPrefix}${fancytext(cmd.pattern, 1)} - ${cmd.desc}\n`;
+                menuContent += `┃   ${design.commandPrefix}${fancytext(cmd.pattern, 1)}\n`;
             });
         }
 
-        menuContent += `\n${footer}\n\n${design.emoji} *${Config.botname}* - Your shadowy assistant\n`;
+        menuContent += `${design.categorySeparator}\n${footer}\n\n${design.emoji} *${Config.botname}* - Your shadowy assistant\n`;
         menuContent += `©2024 Ͳհҽ օղҽ ąҍօѵҽ ąӀӀ ☠️👑🌍*\n${readmore}`;
 
         // Send the menu with a "forwarded" tag
@@ -165,4 +165,4 @@ function organizeCommands() {
     });
 
     return commandCategories;
-}
+        }
