@@ -1,0 +1,44 @@
+const fetch = require('node-fetch');
+const FormData = require('form-data');
+const { fromBuffer } = require('file-type');
+
+// Function to upload image to telegra.ph
+async function uploadImage(buffer) {
+  const { ext } = await fromBuffer(buffer);
+  let form = new FormData();
+  form.append('file', buffer, 'tmp.' + ext);
+  
+  let res = await fetch('https://api.shannmoderz.xyz/server/upload', {
+    method: 'POST',
+    body: form,
+  });
+  
+  let img = await res.json();
+  if (img.error) throw img.error;
+  return 'https://api.shannmoderz.xyz/server/file' + img[0].src;
+}
+
+// Command registration
+smd(
+  {
+    cmdname: "upload",
+    desc: "Upload an image to telegra.ph",
+    react: "📤",
+    type: "misc",
+    filename: __filename,
+  },
+  async (m) => {
+    try {
+      if (!m.hasMedia) {
+        return m.reply("Please send an image to upload.");
+      }
+
+      const buffer = await m.downloadMedia(); // Assuming the bot framework has this method
+      const imageUrl = await uploadImage(buffer);
+      
+      await m.send(`Image uploaded successfully: ${imageUrl}`, m);
+    } catch (e) {
+      m.error(`${e}\n\nCommand: upload`, e, false);
+    }
+  }
+);
