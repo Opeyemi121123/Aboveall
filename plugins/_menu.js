@@ -15,7 +15,7 @@ function getNextMenuDesign() {
   const designs = [
     {
       header: "✦════⟪ *{botname}*® ⟫════✦\n",
-      lineSeparator: "━┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅\n",
+      lineSeparator: "━┅┅┅┅┅┅┅\n",
       commandPrefix: "✧ ",
       footer: "╚═════════════════════✦\n",
       greetingText: "Apologize to me, you're in my world!",
@@ -23,7 +23,7 @@ function getNextMenuDesign() {
     },
     {
       header: "❖════⟪ *{botname}* ⟫════❖\n",
-      lineSeparator: "━┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅\n",
+      lineSeparator: "━┅┅┅┅┅┅┅┅\n",
       commandPrefix: "☆ ",
       footer: "╚═════════════════════❖\n",
       greetingText: "Welcome to my world!",
@@ -31,7 +31,7 @@ function getNextMenuDesign() {
     },
     {
       header: "⚔️════⟪ *{botname}* ⟫════⚔️\n",
-      lineSeparator: "━┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅\n",
+      lineSeparator: "━┅┅┅┅┅┅┅┅\n",
       commandPrefix: "✟ ",
       footer: "╚═════════════════════⚔️\n",
       greetingText: "Go fuck yourself!",
@@ -57,14 +57,14 @@ function sleep(ms) {
 astro_patch.smd({
   'cmdname': "menu",
   'desc': "Displays a calm, readable command list",
-  'react': '',
+  'react': '💮',
   'type': 'user',
   'filename': __filename
 }, async (context, message) => {
   try {
     // Display loading messages
     const loadingMessages = [
-      "The one above all is king"];
+      "The one above all is king 👑 bow your heads"];
     for (const msg of loadingMessages) {
       await context.sendMessage(context.chat, { text: msg });
       await sleep(1000); // Wait for 1 second between messages
@@ -134,10 +134,22 @@ astro_patch.smd({
     }
 
     menuContent += `\n${footer}\n*${Config.botname}* - Your assistant\n`;
-    menuContent += `©2024 The one above all is king\n`;
-    menuContent += `🔗 [WhatsApp Channel](https://whatsapp.com/channel/0029VaeW5Tw4yltQOYIO5E2D)\n`;
-    menuContent += `${readmore}`;
-
+    menuContent += `©2024 *JUPITERBOLD05*\n${readmore}`;
+    
+   // Send the menu with a "forwarded" tag
+    const menuOptions = {
+      'caption': menuContent,
+      'contextInfo': {
+        'forwardingScore': 100, 
+        'isForwarded': true,
+        'externalAdReply': {
+          'title': 'ABOVEALL',
+          'sourceUrl': 'https://whatsapp.com/channel/0029Vas9N7MBA1f0yw8dZ515'
+        }
+      },
+      'ephemeralExpiration': 3000
+    };
+    
     // Send the menu
     await context.sendMessage(context.chat, { text: menuContent });
 
