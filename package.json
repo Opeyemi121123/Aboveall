@@ -1,19 +1,19 @@
 {
-   "name": "Queen_Alya",
+   "name": "Aboveall",
    "version": "2.5.0",
-   "description": "Multi device whatsapp bot by Jupiterbold05....",
+   "description": "Multi device whatsapp bot by JUPITERBOLD05 ....",
    "main": "index.js",
    "type": "commonjs",
    "scripts": {
-      "run": "pm2 start . --deep-monitoring --attach --name Jupiterbold05|| node .",
-      "Jupiterbold05": "pm2 start . --deep-monitoring --attach --name Jupiterbold05|| node .",
-      "start": "pm2 start . --attach --name Jupiterbold05",
-      "stop": "pm2 stop Jupiterbold05",
+      "run": "pm2 start . --deep-monitoring --attach --name JUPITERBOLD05 || node .",
+      "JUPITERBOLD05 ": "pm2 start . --deep-monitoring --attach --name JUPITERBOLD05 || node .",
+      "start": "pm2 start . --attach --name JUPITERBOLD05",
+      "stop": "pm2 stop JUPITERBOLD05",
       "heroku-postbuild": "git clone https://github.com/Jupiterbold05/Aboveall.git temp && mv temp/.git .git && rm -rf temp && npx puppeteer@latest install  --y",
       "fis-heroku-postbuild": "git clone https://github.com/Jupiterbold05/Aboveall.git temp1 && rsync -av temp1/* ./ && rsync -av temp1/.* ./ && rm -rf temp1 && npm i && npx puppeteer@latest install",
       "postinstall": "npx puppeteer@latest install --y"
    },
-   "author": "Jupiterbold05",
+   "author": "JUPITERBOLD05",
    "license": "Apache-2.0",
    "dependencies": {
       "alya": "npm:@distube/ytdl-core@latest",
