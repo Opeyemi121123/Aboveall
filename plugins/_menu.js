@@ -1,4 +1,4 @@
-                     const fs = require('fs');
+const fs = require('fs');
 const path = require('path');
 const os = require('os');
 const Config = require('../config');
@@ -6,29 +6,6 @@ const { fancytext, tiny, runtime, formatp, prefix } = require("../lib");
 const long = String.fromCharCode(0x200e);
 const readmore = long.repeat(0xfa1);
 const astro_patch = require("../lib/plugins");
-
-// Path to the anime audio folder
-const audioFolderPath = path.join(__dirname, '../lib');
-
-// Function to send smooth anime background audio
-async function sendAnimeBackgroundAudio(context, fileName) {
-  try {
-    const filePath = path.join(audioFolderPath, fileName);
-    if (fs.existsSync(filePath)) {
-      const audio = fs.readFileSync(filePath);  // Read the audio file
-      const messageOptions = {
-        audio: audio, 
-        mimetype: 'audio/mpeg'
-      };
-      // Send audio message using the correct sendMessage function
-      await context.sendMessage(context.chat, messageOptions);
-    } else {
-      throw new Error('File not found.');
-    }
-  } catch (error) {
-    await context.error(`Error sending background audio: ${error.message}`, error);
-  }
-}
 
 // Variable to keep track of the current design index
 let currentDesignIndex = 0;
@@ -40,28 +17,25 @@ function getNextMenuDesign() {
       header: "✦✧━━━⟪ *{botname}*® ⟫━━━✧✦\n",
       lineSeparator: "┃ ",
       commandPrefix: "🕸️ ",
-      footer: "✦✧━━━━━━━━━━━━━™✧✦",
-      emoji: "🦋",
+      footer: "⦿⟫━┏━⟫⦿\n",
       greetingText: "Apologize to me, you're in my world!",
-      categorySeparator: "✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦\n",
+      categorySeparator: "⦿⟫━┏━⟫⦿\n",
     },
     {
       header: "❖❖━━━━━⟪ *{botname}* ⟫━━━━━❖❖\n",
       lineSeparator: "┃ ",
       commandPrefix: "👽 ",
-      footer: "❖❖━━━━━━━━━━━━™❖❖",
-      emoji: "💫",
+      footer: "⦿⟫━┏━⟫⦿\n",
       greetingText: "Welcome to my world!",
-      categorySeparator: "❖❖❖❖❖❖❖❖❖❖❖❖❖❖\n",
+      categorySeparator: "⦿⟫━┏━⟫⦿\n",
     },
     {
       header: "⚔️ ━━━⟪ *{botname}* ⟫━━━ ®⚔️\n",
       lineSeparator: "┃ ",
       commandPrefix: "🔥 ",
-      footer: "⚔️━━━━━━━━━━━━━™⚔️",
-      emoji: "☠️",
+      footer: "⦿┏━━━⟫⦿\n",
       greetingText: "Go fuck yourself 🤡!",
-      categorySeparator: "⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️\n",
+      categorySeparator: "⦿⟫━┏━⟫⦿\n",
     }
   ];
 
@@ -100,16 +74,24 @@ astro_patch.smd({
     const { commands } = require("../lib");
     const currentTime = new Date();
     const hours = currentTime.getHours();
+    const minutes = currentTime.getMinutes();
     const currentDate = currentTime.toLocaleDateString();
+    const currentTimeString = `${hours}:${minutes < 10 ? '0' + minutes : minutes}`;
     let greeting = "";
 
-    // Anime-style greetings based on time of day
-    if (hours >= 5 && hours < 12) {
+    // Anime-style greetings based on time of day with additional intervals
+    if (hours >= 5 && hours < 9) {
       greeting = "🌸 *Good Morning* 🌸 - Time for a fresh start!";
-    } else if (hours >= 12 && hours < 18) {
+    } else if (hours >= 9 && hours < 12) {
+      greeting = "🌞 *Mid-Morning* 🌞 - Keep the momentum going!";
+    } else if (hours >= 12 && hours < 15) {
       greeting = "🌞 *Good Afternoon* 🌞 - Keep up the great work!";
-    } else if (hours >= 18 && hours < 22) {
+    } else if (hours >= 15 && hours < 18) {
+      greeting = "🌅 *Late Afternoon* 🌅 - Almost time to relax!";
+    } else if (hours >= 18 && hours < 20) {
       greeting = "🌆 *Good Evening* 🌆 - Unwind and relax!";
+    } else if (hours >= 20 && hours < 22) {
+      greeting = "🌃 *Late Evening* 🌃 - Getting ready for rest!";
     } else {
       greeting = "🌙 *Good Night* 🌙 - Rest and recharge!";
     }
@@ -138,43 +120,51 @@ astro_patch.smd({
     menuContent += `${lineSeparator}🕒 *Uptime:* ${runtime(process.uptime())}\n`;
     menuContent += `${lineSeparator}💻 *RAM Usage:* ${formatp(os.totalmem() - os.freemem())}\n`;
     menuContent += `${lineSeparator}📅 *Date:* ${currentDate}\n`;
+    menuContent += `${lineSeparator}🕰️ *Current Time:* ${currentTimeString}\n`;
     menuContent += `${lineSeparator}📊 *Total Commands:* ${commands.length}\n`;
     menuContent += `${lineSeparator}${greeting}\n\n`;
 
     // List commands by category with decorative separators
     for (const category in commandCategories) {
       menuContent += `${design.categorySeparator}`;
-      menuContent += `${design.emoji} *${tiny(category)}* ${design.emoji}\n`;
+      menuContent += `⦿ *${tiny(category)}* ⦿\n`;
       commandCategories[category].forEach(cmd => {
         menuContent += `┃   ${design.commandPrefix}${fancytext(cmd, 1)}\n`;
       });
     }
 
-    menuContent += `\n${footer}\n\n${design.emoji} *${Config.botname}* - Your assistant\n`;
+    menuContent += `\n${footer}\n⦿ *${Config.botname}* - Your assistant\n`;
     menuContent += `©2024 Ͳհҽ օղҽ ąҍօѵҽ ąӀӀ ☠️👑🌍*\n${readmore}`;
 
-    // Send the menu with a "forwarded" tag
-    const menuOptions = {
-      'caption': menuContent,
-      'contextInfo': {
-        'forwardingScore': 100, 
-        'isForwarded': true,
-        'externalAdReply': {
-          'title': 'ąҍօѵҽ ąӀӀ',
-          'sourceUrl': 'https://whatsapp.com/channel/0029VaeW5Tw4yltQOYIO5E2D'
-        }
-      },
-      'ephemeralExpiration': 3000
-    };
+    // Segment the menu for better readability
+    const segments = menuContent.split('\n').reduce((acc, line, index) => {
+      const segmentIndex = Math.floor(index / 20); // Adjust the number to change the segment size
+      if (!acc[segmentIndex]) {
+        acc[segmentIndex] = [];
+      }
+      acc[segmentIndex].push(line);
+      return acc;
+    }, []).map(segment => segment.join('\n'));
 
-    // Send the menu
-    await context.sendUi(context.chat, menuOptions, context);
-
-    // Play soft background audio after sending the menu
-    await sendAnimeBackgroundAudio(context, 'alya.mp3');
+    // Send each segment of the menu
+    for (const segment of segments) {
+      const menuOptions = {
+        'caption': segment,
+        'contextInfo': {
+          'forwardingScore': 100, 
+          'isForwarded': true,
+          'externalAdReply': {
+            'title': 'ąҍօѵҽ ąӀӀ',
+            'sourceUrl': 'https://whatsapp.com/channel/0029VaeW5Tw4yltQOYIO5E2D'
+          }
+        },
+        'ephemeralExpiration': 3000
+      };
+      await context.sendUi(context.chat, menuOptions, context);
+      await sleep(1000); // Wait for 1 second between segments
+    }
 
   } catch (error) {
     await context.error(`Error: ${error.message}`, error);
   }
 });
-     
