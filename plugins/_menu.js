@@ -67,7 +67,6 @@ function getNextMenuDesign() {
 
   return designs;
 }
-  ];
 
   // Get the current design
   const design = designs[currentDesignIndex];
