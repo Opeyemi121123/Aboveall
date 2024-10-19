@@ -75,7 +75,6 @@ function getNextMenuDesign() {
   currentDesignIndex = (currentDesignIndex + 1) % designs.length;
 
   return design;
-}
 
 // Sleep function for delays
 function sleep(ms) {
