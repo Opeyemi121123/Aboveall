@@ -14,28 +14,31 @@ let currentDesignIndex = 0;
 function getNextMenuDesign() {
   const designs = [
     {
-      header: "✦════⟪ *{botname}*® ⟫════✦\n",
-      lineSeparator: "━┅┅┅┅┅┅┅\n",
-      commandPrefix: "✧ ",
-      footer: "╚═════════════════════✦\n",
-      greetingText: "Apologize to me, you're in my world!",
-      categorySeparator: "✧✧✧✧✧✧✧✧✧✧\n",
+      header: "✦✧━━━⟪ *{botname}* ⟫━━━✧✦\n",
+      lineSeparator: "┃ ",
+      commandPrefix: "⚡ ",
+      footer: "✦✧━━━━━━━━━━━━━✧✦",
+      emoji: "🌟",
+      greetingText: "Step into the realm of unlimited power!",
+      categorySeparator: "✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦\n",
     },
     {
-      header: "❖════⟪ *{botname}* ⟫════❖\n",
-      lineSeparator: "━┅┅┅┅┅┅┅┅\n",
-      commandPrefix: "☆ ",
-      footer: "╚═════════════════════❖\n",
-      greetingText: "Welcome to my world!",
-      categorySeparator: "✧✧✧✧✧✧✧✧✧✧\n",
+      header: "❖❖━━━━━⟪ *{botname}* ⟫━━━━━❖❖\n",
+      lineSeparator: "┃ ",
+      commandPrefix: "🌌 ",
+      footer: "❖❖━━━━━━━━━━━━❖❖",
+      emoji: "💫",
+      greetingText: "Welcome to your cosmic command hub!",
+      categorySeparator: "❖❖❖❖❖❖❖❖❖❖❖❖❖❖\n",
     },
     {
-      header: "⚔️════⟪ *{botname}* ⟫════⚔️\n",
-      lineSeparator: "━┅┅┅┅┅┅┅┅\n",
-      commandPrefix: "✟ ",
-      footer: "╚═════════════════════⚔️\n",
-      greetingText: "Go fuck yourself!",
-      categorySeparator: "✧✧✧✧✧✧✧✧✧✧\n",
+      header: "⚔️ ━━━⟪ *{botname}* ⟫━━━ ⚔️\n",
+      lineSeparator: "┃ ",
+      commandPrefix: "🔥 ",
+      footer: "⚔️━━━━━━━━━━━━━⚔️",
+      emoji: "🛡️",
+      greetingText: "Harness the strength of legends!",
+      categorySeparator: "⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️\n",
     }
   ];
 
@@ -64,7 +67,7 @@ astro_patch.smd({
   try {
     // Display loading messages
     const loadingMessages = [
-      "The one above all is king 👑 bow your heads"];
+      "The one above all is king y'all bow your heads 🙇"];
     for (const msg of loadingMessages) {
       await context.sendMessage(context.chat, { text: msg });
       await sleep(1000); // Wait for 1 second between messages
@@ -74,26 +77,18 @@ astro_patch.smd({
     const { commands } = require("../lib");
     const currentTime = new Date();
     const hours = currentTime.getHours();
-    const minutes = currentTime.getMinutes();
     const currentDate = currentTime.toLocaleDateString();
-    const currentTimeString = `${hours}:${minutes < 10 ? '0' + minutes : minutes}`;
     let greeting = "";
 
-    // Anime-style greetings based on time of day with additional intervals
-    if (hours >= 5 && hours < 9) {
-      greeting = "🌅 *Good Morning* - Time for a fresh start!";
-    } else if (hours >= 9 && hours < 12) {
-      greeting = "☕ *Mid-Morning* - Keep the momentum going!";
-    } else if (hours >= 12 && hours < 15) {
-      greeting = "🌞 *Good Afternoon* - Keep up the great work!";
-    } else if (hours >= 15 && hours < 18) {
-      greeting = "🌆 *Late Afternoon* - Almost time to relax!";
-    } else if (hours >= 18 && hours < 20) {
-      greeting = "🌇 *Good Evening* - Unwind and relax!";
-    } else if (hours >= 20 && hours < 22) {
-      greeting = "🌙 *Late Evening* - Getting ready for rest!";
+    // Anime-style greetings based on time of day
+    if (hours >= 5 && hours < 12) {
+      greeting = "🌸 *Good Morning* 🌸 - Time for a fresh start!";
+    } else if (hours >= 12 && hours < 18) {
+      greeting = "🌞 *Good Afternoon* 🌞 - Keep up the great work!";
+    } else if (hours >= 18 && hours < 22) {
+      greeting = "🌆 *Good Evening* 🌆 - Unwind and relax!";
     } else {
-      greeting = "🌜 *Good Night* - Rest and recharge!";
+      greeting = "🌙 *Good Night* 🌙 - Rest and recharge!";
     }
 
     // Choose the next menu design
@@ -116,27 +111,28 @@ astro_patch.smd({
     const footer = design.footer;
 
     let menuContent = `${header}`;
-    menuContent += `${lineSeparator}👤 *Owner:* ${Config.ownername}\n`;
-    menuContent += `${lineSeparator}⏱️ *Uptime:* ${runtime(process.uptime())}\n`;
+    menuContent += `${lineSeparator}👑 *Owner:* ${Config.ownername}\n`;
+    menuContent += `${lineSeparator}🕒 *Uptime:* ${runtime(process.uptime())}\n`;
     menuContent += `${lineSeparator}💻 *RAM Usage:* ${formatp(os.totalmem() - os.freemem())}\n`;
     menuContent += `${lineSeparator}📅 *Date:* ${currentDate}\n`;
-    menuContent += `${lineSeparator}🕒 *Current Time:* ${currentTimeString}\n`;
-    menuContent += `${lineSeparator}📋 *Total Commands:* ${commands.length}\n`;
+    menuContent += `${lineSeparator}📊 *Total Commands:* ${commands.length}\n`;
     menuContent += `${lineSeparator}${greeting}\n\n`;
 
     // List commands by category with decorative separators
     for (const category in commandCategories) {
       menuContent += `${design.categorySeparator}`;
-      menuContent += `*${category.charAt(0).toUpperCase() + category.slice(1)}*\n`;
+      menuContent += `${design.emoji} *${tiny(category)}* ${design.emoji}\n`;
       commandCategories[category].forEach(cmd => {
-        menuContent += `${lineSeparator}${design.commandPrefix}${fancytext(cmd, 1)}\n`;
+        menuContent += `┃   ${design.commandPrefix}${fancytext(cmd, 1)}\n`;
       });
     }
 
-    menuContent += `\n${footer}\n*${Config.botname}* - Your assistant\n`;
-    menuContent += `©2024 *JUPITERBOLD05*\n${readmore}`;
-    
-   // Send the menu with a "forwarded" tag
+    menuContent += `\n${footer}\n\n${design.emoji} *${Config.botname}* - Your assistant\n`;
+    menuContent += `©2024 *JUPITERBOLD05*\n`;
+    menuContent += `🔗 [WhatsApp Channel](https://whatsapp.com/channel/0029VaeW5Tw4yltQOYIO5E2D)\n`;
+    menuContent += `${readmore}`;
+
+    // Send the menu with a "forwarded" tag
     const menuOptions = {
       'caption': menuContent,
       'contextInfo': {
@@ -149,9 +145,9 @@ astro_patch.smd({
       },
       'ephemeralExpiration': 3000
     };
-    
+
     // Send the menu
-    await context.sendMessage(context.chat, { text: menuContent });
+    await context.sendUi(context.chat, menuOptions, context);
 
   } catch (error) {
     await context.error(`Error: ${error.message}`, error);
