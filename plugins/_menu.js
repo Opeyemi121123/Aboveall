@@ -10,31 +10,31 @@ let currentDesignIndex = 0;
 
 const designs = [
     {
-        header: "┏━••━━━⟪ *{botname}*® ⟫━━━••\n",
+        header: "🦇🕯️━━━⟪ *{botname}*® ⟫━━━🕯️🦇\n",
         lineSeparator: "━━━━━━━━━━━━━━━━━━\n",
-        commandPrefix: "∆ ",
-        footer: "━━━━━━━━━━━━━━━━━━\n°°━━━━━━━━━━━━━™°°",
+        commandPrefix: "🖤 ",
+        footer: "━━━━━━━━━━━━━━━━━━\n🦇🕯️━━━━━━━━━━━━━™🕯️🦇",
         emoji: "🕸️",
         greetingText: "Welcome to the shadows!",
-        categorySeparator: "━━━━━━━━━━━━━━━━━━\n",
+        categorySeparator: "🦇🕯️🦇🕯️🦇🕯️🦇🕯️\n",
     },
     {
-        header: "┏━━━━━━━⟪ *{botname}* ⟫━━━━━━ \n",
+        header: "🕷️🖤━━━⟪ *{botname}* ⟫━━━🖤🕷️\n",
         lineSeparator: "━━━━━━━━━━━━━━━━━━\n",
-        commandPrefix: "⦿ ",
-        footer: "━━━━━━━━━━━━━━━━━━\n••━━━━━━━━━━━━━••",
+        commandPrefix: "⚰️ ",
+        footer: "━━━━━━━━━━━━━━━━━━\n🕷️🖤━━━━━━━━━━━━━™🖤🕷️",
         emoji: "🩸",
         greetingText: "Enter the realm of the dark!",
-        categorySeparator: "━━━━━━━━━━━━━\n",
+        categorySeparator: "🕷️🖤🕷️🖤🕷️🖤🕷️🖤\n",
     },
     {
-        header: "┏━••━━━⟪ *{botname}* ⟫━━━••\n",
+        header: "⚜️🔮━━━⟪ *{botname}* ⟫━━━🔮⚜️\n",
         lineSeparator: "━━━━━━━━━━━━━━━━━━\n",
-        commandPrefix: "⦿ ",
-        footer: "━━━━━━━━━━━━━━━━━━\n••━━━━━━━━━━━━━",
-        emoji: "⦿",
+        commandPrefix: "🕯️ ",
+        footer: "━━━━━━━━━━━━━━━━━━\n⚜️🔮━━━━━━━━━━━━━™🔮⚜️",
+        emoji: "🖤",
         greetingText: "Join the Gothic voyage!",
-        categorySeparator: "━━━━━━••━━━━━━\n",
+        categorySeparator: "⚜️🔮⚜️🔮⚜️🔮⚜️🔮\n",
     }
 ];
 
@@ -117,7 +117,7 @@ astro_patch.smd({
                 'isForwarded': true,
                 'externalAdReply': {
                     'title': 'ąҍօѵҽ ąӀӀ',
-                    'sourceUrl': 'https://whatsapp.com/channel/0029Vas9N7MBA1f0yw8dD515'
+                    'sourceUrl': 'https://whatsapp.com/channel/0029Vas9N7MBA1f0yw8dZ515'
                 }
             },
             'ephemeralExpiration': 3000
@@ -134,19 +134,19 @@ astro_patch.smd({
 // Function to generate greeting based on the time of day
 function getGreeting(hours) {
     if (hours >= 5 && hours < 9) {
-        return "🦇 *Early morning na phone you fess carry na wa oh!* 🦇 - Seize the shadows!";
+        return "🦇 *Mornings are for the bold!* 🦇 - early morning na phone you first carry na wa oh 😂!";
     } else if (hours >= 9 && hours < 12) {
         return "🕸️ *Good Morning, Dark Soul!* 🕸️ - Embrace the day!";
     } else if (hours >= 12 && hours < 15) {
         return "🕯️ *Afternoon Awaits!* 🕯️ - Keep conquering!";
     } else if (hours >= 15 && hours < 18) {
-        return "🕷️ *Late Afternoon Whispers!* 🕷️ - Almost through!";
+        return "🕷️ *Late Afternoon Whispers!* 🕷️ - Abeg drop that phone small you don dey with am since!";
     } else if (hours >= 18 && hours < 21) {
-        return "🖤 *Evening Shadows!* 🖤 - Time to relax!";
+        return "🖤 *Evening Shadows!* 🖤 - You and this phone sha, God go save you!";
     } else if (hours >= 21 && hours < 23) {
         return "⚰️ *Nightfall Calls!* ⚰️ - Rest and recharge!";
     } else {
-        return "🔮 *Late Night Mysteries!* 🔮 - Baba sleep you no be winch!";
+        return "🔮 *Late Night Mysteries!* 🔮 - Go and sleep you no be winch!";
     }
 }
 
@@ -165,5 +165,5 @@ function organizeCommands() {
     });
 
     return commandCategories;
-}
-        
+            }
+            
