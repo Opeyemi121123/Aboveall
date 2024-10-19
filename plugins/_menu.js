@@ -64,8 +64,6 @@ function getNextMenuDesign() {
       categorySeparator: "🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥\n",
     }
   ];
-
-  return designs;
 }
 
   // Get the current design
