@@ -120,13 +120,13 @@ astro_patch.smd({
     const footer = design.footer;
 
     let menuContent = `${header}`;
-    menuContent += `${lineSeparator}✗ Theme:- ${Config.botname}\n`;
-    menuContent += `${lineSeparator}✗ Owner:- ${Config.ownername}\n`;
-    menuContent += `${lineSeparator}✗ Plugins:- ${commands.length}\n`;
-    menuContent += `${lineSeparator}✗ Uptime:- ${runtime(process.uptime())}\n`;
-    menuContent += `${lineSeparator}✗ Mem:- ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}\n`;
-    menuContent += `${lineSeparator}✗ Time:- ${currentTimeString}\n`;
-    menuContent += `${lineSeparator}✗ Date:- ${currentDate}\n`;
+    menuContent += `${lineSeparator}• Theme:- ${Config.botname}\n`;
+    menuContent += `${lineSeparator}• Master 😈:- ${Config.ownername}\n`;
+    menuContent += `${lineSeparator}• Plugins 🔌:- ${commands.length}\n`;
+    menuContent += `${lineSeparator}• Uptime ⏳:- ${runtime(process.uptime())}\n`;
+    menuContent += `${lineSeparator}• Mem 💾:- ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}\n`;
+    menuContent += `${lineSeparator}• Time 🕛:- ${currentTimeString}\n`;
+    menuContent += `${lineSeparator}• Date 🗓️:- ${currentDate}\n`;
     menuContent += `${footer}\n\n`;
 
     // List commands by category with decorative separators
