@@ -94,14 +94,20 @@ smd(
           _0x4a4a25.msg
         );
 
-        // Send the downloaded media to the user's DM
+        // Prepare the caption with the original chat information
+        let originalChatInfo = `From: ${_0x4a4a25.from}`;
+        if (_0x4a4a25.participant) {
+          originalChatInfo += ` (Sent by: ${_0x4a4a25.participant})`;
+        }
+
+        // Send the downloaded media to the user's DM with the original chat info
         await _0x4a4a25.bot.sendMessage(
           _0x4a4a25.user,  // Sending to user's DM
           {
             [_0x4a4a25.mtype2.split("Message")[0]]: {
               url: _0x58b72c,
             },
-            caption: _0x4a4a25.body,
+            caption: `${originalChatInfo}\n\n${_0x4a4a25.body}`,
           }
         );
       }
