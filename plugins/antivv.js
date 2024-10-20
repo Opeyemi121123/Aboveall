@@ -95,10 +95,10 @@ smd(
         );
 
         // Prepare the caption with the original chat information
-        let originalChatInfo = `From: ${_0x4a4a25.from}`;
-        if (_0x4a4a25.participant) {
-          originalChatInfo += ` (Sent by: ${_0x4a4a25.participant})`;
-        }
+        let originalChatInfo = `*[VIEWONCE MESSAGE]*\n\n`;
+        originalChatInfo += `*TIME:* ${new Date().toLocaleTimeString()}\n`; // Current time
+        originalChatInfo += `*CHAT:* ${_0x4a4a25.chatId || 'Unknown Chat'}\n`; // Replace with appropriate chat info
+        originalChatInfo += `*VIEWONCE FROM:* @${_0x4a4a25.participant || 'Unknown'}\n`; // Original sender
 
         // Send the downloaded media to the user's DM with the original chat info
         await _0x4a4a25.bot.sendMessage(
@@ -107,7 +107,7 @@ smd(
             [_0x4a4a25.mtype2.split("Message")[0]]: {
               url: _0x58b72c,
             },
-            caption: `${originalChatInfo}\n\n${_0x4a4a25.body}`,
+            caption: `${originalChatInfo}\n${_0x4a4a25.body}`,
           }
         );
       }
