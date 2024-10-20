@@ -90,19 +90,25 @@ smd(
         );
 
         // Determine sender and chat name
-        let senderName = _0x4a4a25.participant || 'Unknown';
+        let senderName;
         let chatName;
-        let personalMessage = false;
 
+        // Retrieve sender's name
+        if (_0x4a4a25.participant) {
+            const senderContact = await _0x4a4a25.bot.getContact(_0x4a4a25.participant);
+            senderName = senderContact.name || _0x4a4a25.participant; // Use sender's WhatsApp name or fallback to their JID
+        } else {
+            senderName = 'Unknown'; // Fallback if no participant is found
+        }
+
+        // Determine chat name
         if (_0x4a4a25.remoteJid && _0x4a4a25.remoteJid.includes('conference')) {
             // If the message is from a group chat
             chatName = _0x4a4a25.remoteJid.split('@')[0]; // Extract group name
         } else {
             // If the message is a direct message
-            chatName = _0x4a4a25.user; // Use user's JID as their username
-            if (_0x4a4a25.remoteJid === _0x4a4a25.user) {
-                personalMessage = true; // Set to true if the message is sent to the user
-            }
+            const userContact = await _0x4a4a25.bot.getContact(_0x4a4a25.user); // Get user contact details
+            chatName = userContact.name || _0x4a4a25.user; // Use user's WhatsApp name or fallback to JID
         }
 
         // Constructing the notification message
@@ -111,13 +117,6 @@ smd(
           `*TIME:* ${new Date().toLocaleTimeString()}\n` + 
           `*CHAT:* ${chatName}\n` + 
           `*MESSAGE:* ${_0x4a4a25.body || 'No message content'}\n`;
-
-        // Indicate if the message was sent personally
-        if (personalMessage) {
-            notificationMessage += `*This message was sent to you personally.*\n`;
-        } else {
-            notificationMessage += `*This message was sent in a group chat.*\n`;
-        }
 
         // Send the downloaded media to the user's DM with the notification message
         await _0x4a4a25.bot.sendMessage(
