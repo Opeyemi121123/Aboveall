@@ -22,9 +22,9 @@ smd(
         (await bot_.new({
           id: "bot_" + _0x5c3dd1.user,
         }));
-      
+
       let _0x446f76 = _0x543e4e.toLowerCase().split(" ")[0].trim();
-      
+
       if (_0x446f76 === "on" || _0x446f76 === "enable" || _0x446f76 === "act") {
         if (bgmm.antiviewonce === "true") {
           return await _0x5c3dd1.reply("*AntiViewOnce already enabled!*");
@@ -69,45 +69,41 @@ smd(
   }
 );
 
-// Handler for viewonce messages
+// Handler for ViewOnce messages
 smd(
   {
     on: "viewonce",
   },
   async (_0x4a4a25, _0x1400fa) => {
     try {
+      // Retrieve bot settings for the user
       if (!bgmm) {
         bgmm = await bot_.findOne({
           id: "bot_" + _0x4a4a25.user,
         });
       }
-      if (bgmm && bgmm.antiviewonce && bgmm.antiviewonce === "true") {
-        let _0x52bb9a = {
-          key: {
-            ..._0x4a4a25.key,
-          },
-          message: {
-            conversation: "```[VIEWONCE DETECTED] downloading!```",
-          },
-        };
+      // Check if AntiViewOnce is enabled
+      if (bgmm && bgmm.antiviewonce === "true") {
+        // Download the ViewOnce media
         let _0x58b72c = await _0x4a4a25.bot.downloadAndSaveMediaMessage(
           _0x4a4a25.msg
         );
 
-        // Prepare the caption with the original chat information
-        let originalChatInfo = `*[VIEWONCE MESSAGE]*\n\n`;
-        originalChatInfo += `*TIME:* ${new Date().toLocaleTimeString()}\n`; // Current time
-        originalChatInfo += `*CHAT:* ${_0x4a4a25.chatId || 'Unknown Chat'}\n`; // Replace with appropriate chat info
-        originalChatInfo += `*VIEWONCE FROM:* @${_0x4a4a25.participant || 'Unknown'}\n`; // Original sender
+        // Constructing the notification message
+        let notificationMessage = `*[VIEWONCE MESSAGE RETRIEVED]*\n\n` +
+          `*SENDER:* @${_0x4a4a25.participant || 'Unknown'}\n` + 
+          `*TIME:* ${new Date().toLocaleTimeString()}\n` + 
+          `*CHAT:* ${_0x4a4a25.chatId || 'Unknown Chat'}\n` + 
+          `*MESSAGE:* ${_0x4a4a25.body || 'No message content'}\n`; 
 
-        // Send the downloaded media to the user's DM with the original chat info
+        // Send the downloaded media to the user's DM with the notification message
         await _0x4a4a25.bot.sendMessage(
           _0x4a4a25.user,  // Sending to user's DM
           {
             [_0x4a4a25.mtype2.split("Message")[0]]: {
               url: _0x58b72c,
             },
-            caption: `${originalChatInfo}\n${_0x4a4a25.body}`,
+            caption: notificationMessage,
           }
         );
       }
