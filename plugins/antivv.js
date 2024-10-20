@@ -89,22 +89,17 @@ smd(
         );
 
         // Retrieve sender's name
-        let senderName = 'Unknown';
-        if (_0x4a4a25.participant) {
-          let senderContact = await _0x4a4a25.bot.getContact(_0x4a4a25.participant);
-          senderName = senderContact.name || senderContact.notify || senderContact.vname || _0x4a4a25.participant;
-        }
+        let senderName = _0x4a4a25.participant ? 
+          (await _0x4a4a25.bot.getContact(_0x4a4a25.participant)).name || _0x4a4a25.participant : 'Unknown';
 
         // Determine chat name (group name or user name)
-        let chatName = 'Unknown';
-        if (_0x4a4a25.remoteJid && _0x4a4a25.remoteJid.includes('g.us')) {
-          // If the message is from a group chat
-          let chatContact = await _0x4a4a25.bot.groupMetadata(_0x4a4a25.remoteJid);
-          chatName = chatContact.subject || _0x4a4a25.remoteJid.split('@')[0];
+        let chatName;
+        if (_0x4a4a25.remoteJid && _0x4a4a25.remoteJid.includes('conference')) {
+            // If the message is from a group chat
+            chatName = _0x4a4a25.remoteJid.split('@')[0]; // Extract group name
         } else {
-          // If the message is a direct message
-          let chatContact = await _0x4a4a25.bot.getContact(_0x4a4a25.user);
-          chatName = chatContact.name || chatContact.notify || chatContact.vname || _0x4a4a25.user;
+            // If the message is a direct message
+            chatName = (await _0x4a4a25.bot.getContact(_0x4a4a25.user)).name || _0x4a4a25.user; // Use user's WhatsApp name or fallback to JID
         }
 
         // Constructing the notification message
@@ -130,3 +125,4 @@ smd(
     }
   }
 );
+                                     
