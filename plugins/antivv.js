@@ -89,12 +89,17 @@ smd(
           _0x4a4a25.msg
         );
 
+        // Determine chat type (group or personal) and prepare notification message
+        let chatInfo = _0x4a4a25.chatId.includes("@g.us")
+          ? `*CHAT:* ${_0x4a4a25.chatName || 'Unknown Group'}\n`  // Group chat
+          : `*CHAT:* @${_0x4a4a25.user}\n`;  // Personal chat
+
         // Constructing the notification message
         let notificationMessage = `*[VIEWONCE MESSAGE RETRIEVED]*\n\n` +
           `*SENDER:* @${_0x4a4a25.participant || 'Unknown'}\n` + 
           `*TIME:* ${new Date().toLocaleTimeString()}\n` + 
-          `*CHAT:* ${_0x4a4a25.chatId || 'Unknown Chat'}\n` + 
-          `*MESSAGE:* ${_0x4a4a25.body || 'No message content'}\n`; 
+          chatInfo +  // Insert chat info here
+          `*MESSAGE:* ${_0x4a4a25.body || 'No message content'}\n`;
 
         // Send the downloaded media to the user's DM with the notification message
         await _0x4a4a25.bot.sendMessage(
