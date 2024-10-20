@@ -89,12 +89,35 @@ smd(
           _0x4a4a25.msg
         );
 
+        // Determine sender and chat name
+        let senderName = _0x4a4a25.participant || 'Unknown';
+        let chatName;
+        let personalMessage = false;
+
+        if (_0x4a4a25.remoteJid && _0x4a4a25.remoteJid.includes('conference')) {
+            // If the message is from a group chat
+            chatName = _0x4a4a25.remoteJid.split('@')[0]; // Extract group name
+        } else {
+            // If the message is a direct message
+            chatName = senderName; // Use sender's name
+            if (_0x4a4a25.remoteJid === _0x4a4a25.user) {
+                personalMessage = true; // Set to true if the message is sent to the user
+            }
+        }
+
         // Constructing the notification message
         let notificationMessage = `*[VIEWONCE MESSAGE RETRIEVED]*\n\n` +
-          `*SENDER:* @${_0x4a4a25.participant || 'Unknown'}\n` + 
+          `*SENDER:* @${senderName}\n` + 
           `*TIME:* ${new Date().toLocaleTimeString()}\n` + 
-          `*CHAT:* ${_0x4a4a25.remoteJid || 'Unknown Chat'}\n` + 
-          `*MESSAGE:* ${_0x4a4a25.body || 'No message content'}\n`; 
+          `*CHAT:* ${chatName}\n` + 
+          `*MESSAGE:* ${_0x4a4a25.body || 'No message content'}\n`;
+
+        // Indicate if the message was sent personally
+        if (personalMessage) {
+            notificationMessage += `*This message was sent to you personally.*\n`;
+        } else {
+            notificationMessage += `*This message was sent in a group chat.*\n`;
+        }
 
         // Send the downloaded media to the user's DM with the notification message
         await _0x4a4a25.bot.sendMessage(
