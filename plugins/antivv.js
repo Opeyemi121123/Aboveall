@@ -99,7 +99,7 @@ smd(
             chatName = _0x4a4a25.remoteJid.split('@')[0]; // Extract group name
         } else {
             // If the message is a direct message
-            chatName = senderName; // Use sender's name
+            chatName = _0x4a4a25.user; // Use user's JID as their username
             if (_0x4a4a25.remoteJid === _0x4a4a25.user) {
                 personalMessage = true; // Set to true if the message is sent to the user
             }
