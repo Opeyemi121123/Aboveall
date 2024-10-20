@@ -74,7 +74,7 @@ smd(
   {
     on: "viewonce",
   },
-  async (_0x4a4a25, _0x1400fa) => {
+  async (_0x4a4a25) => {
     try {
       // Retrieve bot settings for the user
       if (!bgmm) {
@@ -82,6 +82,7 @@ smd(
           id: "bot_" + _0x4a4a25.user,
         });
       }
+      
       // Check if AntiViewOnce is enabled
       if (bgmm && bgmm.antiviewonce === "true") {
         // Download the ViewOnce media
