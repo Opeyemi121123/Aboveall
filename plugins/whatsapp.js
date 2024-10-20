@@ -378,7 +378,9 @@ cmd({
       }
     };
     let _0x201e84 = await _0x9034b9.bot.downloadAndSaveMediaMessage(_0x1fd65b.msg);
-    await _0x9034b9.bot.sendMessage(_0x9034b9.jid, {
+    
+    // Send the downloaded media to the user's DM
+    await _0x9034b9.bot.sendMessage(_0x9034b9.user, {
       [_0x1fd65b.mtype2.split('Mes')[0x0]]: {
         'url': _0x201e84
       },
