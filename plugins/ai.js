@@ -954,3 +954,4 @@ smd(
       await m.error(`${e}\n\ncommand: blackbox`, e);
     }
   }
+);
