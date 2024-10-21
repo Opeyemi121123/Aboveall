@@ -24,10 +24,10 @@ const {
   createSticker,
   StickerTypes
 } = require("wa-sticker-formatter");
-const Queen_Alya = require("../lib/plugins");
+const Aboveall = require("../lib/plugins");
 const {
   cmd
-} = Queen_Alya;
+} = Aboveall;
 smd({
   'cmdname': "join",
   'info': "joins group by link",
@@ -102,7 +102,7 @@ smd({
       var _0x2fe2c7 = "https://chat.whatsapp.com/" + _0x3a49e9;
       var _0x539d8f = {
         'externalAdReply': {
-          'title': "Queen_Alya",
+          'title': "Aboveall",
           'body': '' + _0x37b490,
           'renderLargerThumbnail': true,
           'thumbnail': log0,
@@ -144,7 +144,7 @@ smd({
       var _0x236a49 = _0x10288a + '-' + _0x436585.toString().padStart(0x2, '0') + '-' + _0x511884.toString().padStart(0x2, '0');
       var _0x56eaaf = {
         'externalAdReply': {
-          'title': "Queen_Alya",
+          'title': "Aboveall",
           'body': _0x5f4890.subject,
           'renderLargerThumbnail': true,
           'thumbnail': log0,

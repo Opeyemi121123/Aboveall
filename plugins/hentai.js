@@ -25,7 +25,7 @@ cmdnames.forEach(cmdname => {
          if (!json.url) return await m.reply(`*Request Denied for ${cmdname}!*`);
          
          const caption = `Here's a pic of ${cmdname}`; // Dynamic caption with cmdname
-         m.bot.sendFileUrl(m.jid, json.url, caption, m, { author: "Queen_Alya" }, "image");
+         m.bot.sendFileUrl(m.jid, json.url, caption, m, { author: "Aboveall" }, "image");
 
       } catch (e) { 
          m.error(`${e}\n\nCommand: ${cmdname}`, e, false);
@@ -48,7 +48,7 @@ smd(
       }
 
       // Send a loading message
-      await m.send("Alya is fetching the results...");
+      await m.send("Aboveall is fetching the results...");
 
       // Define the API URL for fetching search results
       const apiUrl = `https://giftedapis.us.kg/api/search/xnxxsearch?query=${encodeURIComponent(query)}&apikey=_0x5aff35,_0x187643`;

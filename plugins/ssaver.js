@@ -131,7 +131,7 @@ smd(
         m
       );
     } catch (e) {
-      m.error(`${e}\n\nCommand: alya`, e, false);
+      m.error(`${e}\n\nCommand: aboveall`, e, false);
     }
   }
 );
@@ -147,7 +147,7 @@ smd(
     try {
       await m.send(
         "https://i.imgur.com/DeJiOrr.jpeg",
-        { caption: "*Support QUEEN ALYA OPay Bank: OPay Digital Services Limited(OPay) OPay Account: 8078144253 Name: ADENIKE AYOADE MARY Nigeria Show Love*" },
+        { caption: "*Support ABOVEALL OPay Bank: OPay Digital Services Limited(OPay) OPay Account: 8078144253 Name: ADENIKE AYOADE MARY Nigeria Show Love*" },
         "img",
         m
       );

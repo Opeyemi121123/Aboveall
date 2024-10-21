@@ -1,4 +1,4 @@
-//alya de los campos de la
+//aboveall de los campos de la
 let {
   runtime,
   formatp,
@@ -37,7 +37,7 @@ smd({
       contextInfo: {
         ...(await _0x1cec94.bot.contextInfo("ACTIVE USERS", _0x1cec94.senderName))
       }
-    }, "alya", _0x1cec94);
+    }, "aboveall", _0x1cec94);
   } catch (_0x225db9) {
     console.log({
       e: _0x225db9
@@ -99,7 +99,7 @@ smd({
       return await _0x7587f6.reply("_Reply to an image/video message!_");
     }
     if (!_0x11eeb1) {
-      return await _0x7587f6.reply("_Need fileName, Example: document alya | caption_");
+      return await _0x7587f6.reply("_Need fileName, Example: document aboveall | caption_");
     }
     let _0x1bfcf5 = await _0x7587f6.bot.downloadAndSaveMediaMessage(_0x49db20);
     let _0x3f6d77 = _0x11eeb1.includes(":") ? ":" : _0x11eeb1.includes(";") ? ";" : "|";
@@ -157,7 +157,7 @@ smd({
 });
 smd({
   cmdname: "feature",
-  alias: ["totalfeature", "features", "alya"],
+  alias: ["totalfeature", "features", "aboveall"],
   category: "tools",
   filename: __filename,
   info: "get counting for total features!"
@@ -168,23 +168,23 @@ smd({
     try {
       let {
         key: _0x2d7cf6
-      } = await _0x4e7c63.send("Counting... 0", {}, "alya", _0x4e7c63);
+      } = await _0x4e7c63.send("Counting... 0", {}, "aboveall", _0x4e7c63);
       for (let _0x16a10f = 0; _0x16a10f <= _0x4cf8ed; _0x16a10f++) {
         if (_0x16a10f % 15 === 0) {
           await _0x4e7c63.send("Counting... " + _0x16a10f, {
             edit: _0x2d7cf6
-          }, "alya", _0x4e7c63);
+          }, "aboveall", _0x4e7c63);
         } else if (_0x4cf8ed - _0x16a10f < 10) {
           await _0x4e7c63.send("Counting... " + _0x16a10f, {
             edit: _0x2d7cf6
-          }, "alya", _0x4e7c63);
+          }, "aboveall", _0x4e7c63);
         }
       }
       await _0x4e7c63.send("*Feature Counting Done!*", {
         edit: _0x2d7cf6
-      }, "alya", _0x4e7c63);
+      }, "aboveall", _0x4e7c63);
     } catch (_0x28ce7e) {}
-    let _0x50f17a = " *乂 Queen_Alya - ＢＯＴ ＦＥＡＴＵＲＥ*\n\n\n  ◦ _Total Features ➪ " + _0x4cf8ed + "_\n  \n*◦ BOT FEATURES*\n\n      Plugins ➪ " + Object.values(_0x4de967.commands).filter(_0x54d4bf => _0x54d4bf.pattern).length + "_\n      _Msg Listener ➪ " + Object.values(_0x4de967.commands).filter(_0x2376a3 => _0x2376a3.on).length + "_\n      _Call Listener ➪ " + Object.values(_0x4de967.commands).filter(_0x54a19b => _0x54a19b.call).length + "_\n      _Group Listener ➪ " + Object.values(_0x4de967.commands).filter(_0x35381c => _0x35381c.group).length + "_\n  \n\n" + Config.caption;
+    let _0x50f17a = " *乂 Aboveall - ＢＯＴ ＦＥＡＴＵＲＥ*\n\n\n  ◦ _Total Features ➪ " + _0x4cf8ed + "_\n  \n*◦ BOT FEATURES*\n\n      Plugins ➪ " + Object.values(_0x4de967.commands).filter(_0x54d4bf => _0x54d4bf.pattern).length + "_\n      _Msg Listener ➪ " + Object.values(_0x4de967.commands).filter(_0x2376a3 => _0x2376a3.on).length + "_\n      _Call Listener ➪ " + Object.values(_0x4de967.commands).filter(_0x54a19b => _0x54a19b.call).length + "_\n      _Group Listener ➪ " + Object.values(_0x4de967.commands).filter(_0x35381c => _0x35381c.group).length + "_\n  \n\n" + Config.caption;
     await _0x4e7c63.bot.relayMessage(_0x4e7c63.chat, {
       requestPaymentMessage: {
         currencyCodeIso4217: "PK",
@@ -269,7 +269,7 @@ smd({
   let _0x3b31ed = "Character of @" + _0x32c078.split("@")[0] + "  is *" + _0x2f5d93 + "* 🔥⚡";
   _0x2a677e.send(_0x3b31ed, {
     mentions: [_0x32c078]
-  }, "alya", _0x2a677e);
+  }, "aboveall", _0x2a677e);
 });
 smd({
   cmdname: "poetry",
@@ -397,7 +397,7 @@ smd({
   try {
     let _0x587b99 = _0x41dfb5.split(" ")[0].trim();
     if (!_0x587b99) {
-      return await _0x4cdec8.reply("*Need URL! Use " + prefix + "ss https://github.com/STAR-KING0/QUEEN_ALYA*");
+      return await _0x4cdec8.reply("*Need URL! Use " + prefix + "ss https://github.com/Jupiterbold05/Aboveall*");
     }
     let _0x358290 = await ssweb(_0x587b99);
     if (_0x358290 && _0x358290.status == "200") {

@@ -1,5 +1,5 @@
 while true
 do
-echo "Starting QUEEN ALYA!"
+echo "Starting ABOVEALL!"
 node .
 done

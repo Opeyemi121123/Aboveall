@@ -145,7 +145,7 @@ smd(
       const message = `╔════════════════◇\n` +
                       `║ *🛐Content:* ${verse.trim()}\n` +  // trim() removes any unnecessary whitespace
                       `║ *✨Reference:* ${reference}\n` +
-                      `║ *✨Author:* > Made By Queen alya\n` +
+                      `║ *✨Author:* > Made By Aboveall\n` +
                       `╚════════════════◇`;
 
       await m.send(message);

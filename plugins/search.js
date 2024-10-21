@@ -19,7 +19,7 @@ smd(
       }
 
       // Send a loading message
-      await m.send("Alya is searching for the song based on your lyrics 🎶");
+      await m.send("Aboveall is searching for the song based on your lyrics 🎶");
 
       // Define the API URL for fetching song details
       const apiUrl = `https://widipe.com/findsong?text=${encodeURIComponent(query)}`;
@@ -270,7 +270,7 @@ smd({
         },
         async(message, text) => {
           try{
-            if (!text) return message.reply(`*_Uhh please, give me a query_*\n*_Example : ${prefix}google Queen Anita._*`);
+            if (!text) return message.reply(`*_Uhh please, give me a query_*\n*_Example : ${prefix}google Aboveall._*`);
             let google = require('google-it');
             google({ 'query': text}).then(res => {
                 let msg= `Google Search From : ${text} \n\n`;

@@ -1,15 +1,15 @@
 {
-    "name": "Queen_ALYA",
+    "name": "Aboveall",
     "description": "Simple WhatsApp Bot",
     "logo": "https://telegra.ph/file/b065f0f673cae5452c358.jpg",
-    "keywords": ["STAR-KING0", "ALYA", "Queen_ALYA"],
+    "keywords": ["JUPITERBOLD05", "ABOVEALL", "Aboveall"],
     "success_url": "/",
     "stack": "container",
   
     "env": {
       "OWNER_NAME": {
         "description": "Name for Bot Owner",
-        "value": "Queen_ALYA",
+        "value": "Aboveall",
         "required": true
       },
   
@@ -40,7 +40,7 @@
       "BOT_NAME": {
         "description": " NAME FOR BOT",
         "required": false,
-        "value": "Queen_ALYA"
+        "value": "Aboveall"
       },
       "TZ": {
         "description": "Put TIME_ZONE according to your location",
@@ -115,7 +115,7 @@
       },
       "PACK_NAME": {
         "description": "Put Sticker Pack_Name.",
-        "value": "Queen_ALYA",
+        "value": "Aboveall",
         "required": false
       },
       "PACK_AUTHER": {
