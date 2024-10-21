@@ -245,7 +245,7 @@ smd(
       const start = new Date().getTime();
 
       // Load image from local path
-      const imagePath = path.join(__dirname, '../lib/alya.jpg');
+      const imagePath = path.join(__dirname, '../lib/aboveall.jpg');
       const imageBuffer = fs.readFileSync(imagePath);
       // Calculate uptime and response rate
       const end = new Date().getTime();
