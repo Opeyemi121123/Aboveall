@@ -15,28 +15,28 @@ function getNextMenuDesign() {
   const designs = [
     {
       header: "✦✧━━━⟪ *{botname}* ⟫━━━✧✦\n",
-      lineSeparator: "┃ ",
-      commandPrefix: "⚡ ",
+      lineSeparator: "◆ ",
+      commandPrefix: "⊛ ",
       footer: "✦✧━━━━━━━━━━━━━✧✦",
-      emoji: "🌟",
+      emoji: "🌠",
       greetingText: "Step into the realm of unlimited power!",
       categorySeparator: "✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦\n",
     },
     {
       header: "❖❖━━━━━⟪ *{botname}* ⟫━━━━━❖❖\n",
-      lineSeparator: "┃ ",
-      commandPrefix: "🌌 ",
+      lineSeparator: "✦ ",
+      commandPrefix: "❖ ",
       footer: "❖❖━━━━━━━━━━━━❖❖",
-      emoji: "💫",
+      emoji: "✨",
       greetingText: "Welcome to your cosmic command hub!",
       categorySeparator: "❖❖❖❖❖❖❖❖❖❖❖❖❖❖\n",
     },
     {
       header: "⚔️ ━━━⟪ *{botname}* ⟫━━━ ⚔️\n",
-      lineSeparator: "┃ ",
-      commandPrefix: "🔥 ",
+      lineSeparator: "• ",
+      commandPrefix: "⚔️ ",
       footer: "⚔️━━━━━━━━━━━━━⚔️",
-      emoji: "🛡️",
+      emoji: "⚡",
       greetingText: "Harness the strength of legends!",
       categorySeparator: "⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️\n",
     }
@@ -77,7 +77,9 @@ astro_patch.smd({
     const { commands } = require("../lib");
     const currentTime = new Date();
     const hours = currentTime.getHours();
+    const minutes = currentTime.getMinutes().toString().padStart(2, '0');
     const currentDate = currentTime.toLocaleDateString();
+    const currentTimeString = `${hours}:${minutes}`;
     let greeting = "";
 
     // Anime-style greetings based on time of day
@@ -111,25 +113,25 @@ astro_patch.smd({
     const footer = design.footer;
 
     let menuContent = `${header}`;
-    menuContent += `${lineSeparator}👑 *Owner:* ${Config.ownername}\n`;
-    menuContent += `${lineSeparator}🕒 *Uptime:* ${runtime(process.uptime())}\n`;
-    menuContent += `${lineSeparator}💻 *RAM Usage:* ${formatp(os.totalmem() - os.freemem())}\n`;
+    menuContent += `${lineSeparator}${greeting}\n`;
+    menuContent += `${lineSeparator}👤 *Owner:* ${Config.ownername}\n`;
     menuContent += `${lineSeparator}📅 *Date:* ${currentDate}\n`;
-    menuContent += `${lineSeparator}📊 *Total Commands:* ${commands.length}\n`;
-    menuContent += `${lineSeparator}${greeting}\n\n`;
+    menuContent += `${lineSeparator}⏰ *Time:* ${currentTimeString}\n`;
+    menuContent += `${lineSeparator}⏳ *Uptime:* ${runtime(process.uptime())}\n`;
+    menuContent += `${lineSeparator}🖥️ *RAM Usage:* ${formatp(os.totalmem() - os.freemem())}\n`;
+    menuContent += `${lineSeparator}📊 *Total Commands:* ${commands.length}\n\n`;
 
     // List commands by category with decorative separators
     for (const category in commandCategories) {
       menuContent += `${design.categorySeparator}`;
       menuContent += `${design.emoji} *${tiny(category)}* ${design.emoji}\n`;
       commandCategories[category].forEach(cmd => {
-        menuContent += `┃   ${design.commandPrefix}${fancytext(cmd, 1)}\n`;
+        menuContent += `${lineSeparator}${design.commandPrefix}${fancytext(cmd, 1)}\n`;
       });
     }
 
     menuContent += `\n${footer}\n\n${design.emoji} *${Config.botname}* - Your assistant\n`;
     menuContent += `©2024 *JUPITERBOLD05*\n`;
-    menuContent += `🔗 [WhatsApp Channel](https://whatsapp.com/channel/0029VaeW5Tw4yltQOYIO5E2D)\n`;
     menuContent += `${readmore}`;
 
     // Send the menu with a "forwarded" tag
