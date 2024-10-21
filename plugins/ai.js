@@ -27,7 +27,7 @@ smd(
       }
 
       // Send a loading message
-      await m.send("Chill your answers are loading •••");
+      await m.send("Alya is thinking 🤔");
 
       // Define the API URL
       const apiUrl = `https://widipe.com/gpt4?text=${encodeURIComponent(query)}`;
@@ -70,7 +70,7 @@ smd(
       }
 
       // Send a loading message
-      await m.send("Chill your answers are loading •••");
+      await m.send("Alya is thinking 🤔");
 
       // Define the API URL
       const apiUrl = `https://itzpire.com/ai/bing-ai?model=Precise&q=${encodeURIComponent(query)}`;
@@ -149,7 +149,7 @@ smd({
       await m.bot.sendFromUrl(
         m.from,
         photoUrl,
-        "*Jupiter did this for you 😊*:",
+        "*Queen_Alya generated this photo*:",
         m,
         {},
         "image"
@@ -222,7 +222,7 @@ smd(
         await m.bot.sendFromUrl(
           m.from,
           photoUrl,
-          "*Jupiter did this for you 😊*:",
+          "*Queen_Alya generated this photo*:",
           m,
           {},
           "image"
@@ -243,7 +243,7 @@ smd(
         await m.bot.sendFromUrl(
           m.from,
           photoUrl,
-          "*Jupiter did this for you 😊*:",
+          "*Queen_Alya generated this photo*:",
           m,
           {},
           "image"
@@ -276,7 +276,7 @@ smd(
       }
 
       // Send a loading message
-      await m.send("Chill your answers are loading •••");
+      await m.send("Alya is thinking 🤔");
 
       // Define the API URL
       const apiUrl = `https://widipe.com/v3/gpt4?text=${encodeURIComponent(query)}`;
@@ -320,7 +320,7 @@ smd(
       }
 
       // Send a loading message
-      await m.send("Chill your answers are loading •••");
+      await m.send("Alya is thinking 🤔");
 
       // Define the new API URL
       const apiUrl = `https://widipe.com/gemini?text=${encodeURIComponent(query)}`;
@@ -364,7 +364,7 @@ smd(
       }
 
       // Send a loading message
-      await m.send("Chill your answers are loading •••");
+      await m.send("Alya is thinking 🤔");
 
       // Define the new API URL
       const apiUrl = `https://widipe.com/turbo?text=${encodeURIComponent(query)}`;
@@ -407,7 +407,7 @@ smd(
       }
 
       // Send a loading message
-      await m.send("Chill your answers are loading •••");
+      await m.send("Alya is thinking 🤔");
 
       // Define the new API URL
       const apiUrl = `https://widipe.com/simi?text=${encodeURIComponent(query)}`;
@@ -472,7 +472,7 @@ smd(
         await m.bot.sendFromUrl(
           m.from,
           photoUrl,
-          "*Jupiter did this for you 😊*:",
+          "*Queen_Alya generated this photo*:",
           m,
           {},
           "image"
@@ -493,7 +493,7 @@ smd(
         await m.bot.sendFromUrl(
           m.from,
           photoUrl,
-          "*Jupiter did this for you 😊*:",
+          "*Queen_Alya generated this photo*:",
           m,
           {},
           "image"
@@ -559,7 +559,7 @@ smd(
           _0x3079e2.msgStatus = true;
           _0x3079e2.senderMsg = _0x358984;
           _0x5f656f =
-            "*ABOVEALLᴅ • ᴀɴɴᴏɴʏᴍᴏᴜs ᴍsɢ*\n\n*Msg_Id:* " +
+            "*QUEEN_ALYAᴅ • ᴀɴɴᴏɴʏᴍᴏᴜs ᴍsɢ*\n\n*Msg_Id:* " +
             _0x3079e2.id +
             "\n*Date:* _" +
             _0xbcd286 +
@@ -618,7 +618,7 @@ smd(
                   _0x2ecd2a.howmanyreply += 1;
                   const _0x5a2204 = _0x2acf30.text.indexOf(",");
                   let _0x3f6b59 =
-                    "*ABOVEALL• ʏᴏᴜʀ ᴀɴᴏɴʏ-ᴍsɢ ʀᴇᴘʟʏ*\n\n*_From @" +
+                    "*QUEEN_ALYA • ʏᴏᴜʀ ᴀɴᴏɴʏ-ᴍsɢ ʀᴇᴘʟʏ*\n\n*_From @" +
                     _0x2ecd2a.reciever.split("@")[0] +
                     "_*\n*_Msg_Id: " +
                     _0x2ecd2a.id +
@@ -928,7 +928,7 @@ smd(
       }
 
       // Send a loading message
-      await m.send("Chill your answers are loading •••");
+      await m.send("Alya is thinking 🤔");
 
       // Define the API URL
       const apiUrl = `https://giftedapis.us.kg/api/ai/blackbox?q=${encodeURIComponent(query)}&apikey=_0x5aff35,_0x187643`;
@@ -954,4 +954,3 @@ smd(
       await m.error(`${e}\n\ncommand: blackbox`, e);
     }
   }
-);
