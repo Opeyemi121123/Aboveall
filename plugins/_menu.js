@@ -83,14 +83,20 @@ astro_patch.smd({
     let greeting = "";
 
     // Anime-style greetings based on time of day
-    if (hours >= 5 && hours < 12) {
+    if (hours >= 5 && hours < 9) {
       greeting = "🌸 *Good Morning* 🌸 - Time for a fresh start!";
-    } else if (hours >= 12 && hours < 18) {
-      greeting = "🌞 *Good Afternoon* 🌞 - Keep up the great work!";
-    } else if (hours >= 18 && hours < 22) {
+    } else if (hours >= 9 && hours < 12) {
+      greeting = "🌞 *It's still morning* 🌞 - You should get to work!";
+    } else if (hours >= 12 && hours < 15) {
+      greeting = "🌞 *Good Afternoon* 🌞 - Keep up the great work that is if you have any 😂!";
+    } else if (hours >= 15 && hours < 18) {
       greeting = "🌆 *Good Evening* 🌆 - Unwind and relax!";
+    } else if (hours >= 18 && hours < 21) {
+      greeting = "🌝 *Still night* 🌝 - Reflect on your day!";
+    } else if (hours >= 21 && hours < 23) {
+      greeting = "⭐ *Still night obviously* ⭐ - Get ready to drop your phone!";
     } else {
-      greeting = "🌙 *Good Night* 🌙 - Rest and recharge!";
+      greeting = "🌙 *Good Night* 🌙 - Try dey sleep you no be winch!";
     }
 
     // Choose the next menu design
