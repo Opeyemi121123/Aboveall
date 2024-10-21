@@ -247,6 +247,10 @@ smd(
       if (!response.ok) {
         return await m.send(
           `*_Error: ${response.status} ${response.statusText}_*`
+          } catch (e) {
+      m.error(`${e}\n\nCommand: gpt2`, e, false);
+    }
+  }
         );
         smd(
   {
@@ -273,4 +277,8 @@ smd(
       if (!response.ok) {
         return await m.send(
           `*_Error: ${response.status} ${response.statusText}_*`
+          } catch (e) {
+      m.error(`${e}\n\nCommand: bing2`, e, false);
+    }
+  }
         );
