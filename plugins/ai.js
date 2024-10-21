@@ -27,7 +27,7 @@ smd(
       }
 
       // Send a loading message
-      await m.send("Chill your answer would soon be ready  🤔");
+      await m.send("Chill your answers are loading •••");
 
       // Define the API URL
       const apiUrl = `https://widipe.com/gpt4?text=${encodeURIComponent(query)}`;
@@ -70,7 +70,7 @@ smd(
       }
 
       // Send a loading message
-      await m.send("Chill your answer would soon be ready  🤔");
+      await m.send("Chill your answers are loading •••");
 
       // Define the API URL
       const apiUrl = `https://itzpire.com/ai/bing-ai?model=Precise&q=${encodeURIComponent(query)}`;
@@ -149,7 +149,7 @@ smd({
       await m.bot.sendFromUrl(
         m.from,
         photoUrl,
-        "*Aboveall generated this photo*:",
+        "*Jupiter did this for you 😊*:",
         m,
         {},
         "image"
@@ -222,7 +222,7 @@ smd(
         await m.bot.sendFromUrl(
           m.from,
           photoUrl,
-          "*Aboveall generated this photo*:",
+          "*Jupiter did this for you 😊*:",
           m,
           {},
           "image"
@@ -243,7 +243,7 @@ smd(
         await m.bot.sendFromUrl(
           m.from,
           photoUrl,
-          "*Aboveall generated this photo*:",
+          "*Jupiter did this for you 😊*:",
           m,
           {},
           "image"
@@ -276,7 +276,7 @@ smd(
       }
 
       // Send a loading message
-      await m.send("Chill your answer would soon be ready  🤔");
+      await m.send("Chill your answers are loading •••");
 
       // Define the API URL
       const apiUrl = `https://widipe.com/v3/gpt4?text=${encodeURIComponent(query)}`;
@@ -320,7 +320,7 @@ smd(
       }
 
       // Send a loading message
-      await m.send("Chill your answer would soon be ready  🤔");
+      await m.send("Chill your answers are loading •••");
 
       // Define the new API URL
       const apiUrl = `https://widipe.com/gemini?text=${encodeURIComponent(query)}`;
@@ -364,7 +364,7 @@ smd(
       }
 
       // Send a loading message
-      await m.send("Chill your answer would soon be ready  🤔");
+      await m.send("Chill your answers are loading •••");
 
       // Define the new API URL
       const apiUrl = `https://widipe.com/turbo?text=${encodeURIComponent(query)}`;
@@ -407,7 +407,7 @@ smd(
       }
 
       // Send a loading message
-      await m.send("Chill your answer would soon be ready  🤔");
+      await m.send("Chill your answers are loading •••");
 
       // Define the new API URL
       const apiUrl = `https://widipe.com/simi?text=${encodeURIComponent(query)}`;
@@ -472,7 +472,7 @@ smd(
         await m.bot.sendFromUrl(
           m.from,
           photoUrl,
-          "*Aboveall generated this photo*:",
+          "*Jupiter did this for you 😊*:",
           m,
           {},
           "image"
@@ -493,7 +493,7 @@ smd(
         await m.bot.sendFromUrl(
           m.from,
           photoUrl,
-          "*Aboveall generated this photo*:",
+          "*Jupiter did this for you 😊*:",
           m,
           {},
           "image"
@@ -602,8 +602,8 @@ smd(
             return;
           }
           if (
-            _0x2acf30.reply_text.includes("ABOVEALL• ᴀɴɴᴏɴʏᴍᴏᴜs ᴍsɢ") &&
-            _0x2dfb59[0].includes("ABOVEALL • ᴀɴɴᴏɴʏᴍᴏᴜs ᴍsɢ") &&
+            _0x2acf30.reply_text.includes("QUEEN_ALYA• ᴀɴɴᴏɴʏᴍᴏᴜs ᴍsɢ") &&
+            _0x2dfb59[0].includes("QUEEN_ALYA • ᴀɴɴᴏɴʏᴍᴏᴜs ᴍsɢ") &&
             _0x2dfb59[2].includes("Msg_Id")
           ) {
             let _0x1b0d01 = "" + _0x2dfb59[2].replace("*Msg_Id:* ", "").trim();
@@ -618,7 +618,7 @@ smd(
                   _0x2ecd2a.howmanyreply += 1;
                   const _0x5a2204 = _0x2acf30.text.indexOf(",");
                   let _0x3f6b59 =
-                    "*ABOVEALL • ʏᴏᴜʀ ᴀɴᴏɴʏ-ᴍsɢ ʀᴇᴘʟʏ*\n\n*_From @" +
+                    "*ABOVEALL• ʏᴏᴜʀ ᴀɴᴏɴʏ-ᴍsɢ ʀᴇᴘʟʏ*\n\n*_From @" +
                     _0x2ecd2a.reciever.split("@")[0] +
                     "_*\n*_Msg_Id: " +
                     _0x2ecd2a.id +
@@ -928,7 +928,7 @@ smd(
       }
 
       // Send a loading message
-      await m.send("Chill your answer would soon be ready  🤔");
+      await m.send("Chill your answers are loading •••");
 
       // Define the API URL
       const apiUrl = `https://giftedapis.us.kg/api/ai/blackbox?q=${encodeURIComponent(query)}&apikey=_0x5aff35,_0x187643`;
@@ -954,4 +954,3 @@ smd(
       await m.error(`${e}\n\ncommand: blackbox`, e);
     }
   }
-);
