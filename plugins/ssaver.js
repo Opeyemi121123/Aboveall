@@ -221,3 +221,30 @@ smd(
     }
   }
 );
+smd(
+  {
+    pattern: "gpt",
+    react: "🤖",
+    desc: "Get a response from Bing AI based on user query.",
+    category: "ai",
+    filename: __filename,
+  },
+  async (m) => {
+    try {
+      // Extract the query from the message
+      const query = m.text.split(' ').slice(1).join(' ');
+      if (!query) {
+        return await m.send("Please provide a query, e.g., `.gpt What is life?`.");
+      }
+
+      // Send a loading message
+      await m.send("Chill your answers are loading •••");
+
+      // Define the API URL
+      const apiUrl = `https://widipe.com/gpt4?text=${encodeURIComponent(query)}`;
+      const response = await fetch(apiUrl);
+
+      if (!response.ok) {
+        return await m.send(
+          `*_Error: ${response.status} ${response.statusText}_*`
+        );
