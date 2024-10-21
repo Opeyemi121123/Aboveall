@@ -31,11 +31,11 @@ smd(
 ➮ʀᴜɴᴛɪᴍᴇ - ${runtime(process.uptime())} 
 ➮ᴅᴀᴛᴇ - ${message.date} 
 ➮ɴᴏᴡ ᴛɪᴍᴇ - ${message.time} 
-➮Fᴏᴜɴᴅᴇʀ- *Jupiterbold05*
+➮Fᴏᴜɴᴅᴇʀ- *Star King*
 ➮Oᴡɴᴇʀ - ${Config.ownername} 
 ➮Nᴜᴍ - ${owner.split(",")[0]} 
 ➮Mᴇᴍᴏ - ${formatp(os.totalmem() - os.freemem())} 
-      \n *ABOVEALL SIMPLE WHATSAPP BOT*\n\n ${readmore} 
+      \n *QUEEN_ALYA SIMPLE WHATSAPP BOT*\n\n ${readmore} 
 ╭──❰ *ALL MENU* ❱ 
 │💞 Lɪꜱᴛ 
 │💞 Cᴀᴛᴇɢᴏʀʏ 
